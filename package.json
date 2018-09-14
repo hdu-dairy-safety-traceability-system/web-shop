@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.9.2",
+    "babel-plugin-import": "^1.8.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.0",
+    "react-app-rewired": "^1.6.2",
     "react-dom": "^16.5.0",
+    "react-responsive-carousel": "^3.1.41",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx src/ --fix -f table"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-plugin-babel": "^5.2.0",
+    "eslint-plugin-react": "^7.11.1"
   }
 }
