@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Layout } from 'antd'
 
 import ShopHeader from './Components/Header'
-import ProductList from '@/Components/Product/List'
+import ProductPartition from '@/Components/Product/Partition'
 import Section from '@/Components/Layout/Section'
 const { Header, Content, Footer } = Layout
 
@@ -15,7 +15,8 @@ export default class Home extends Component {
           <ShopHeader />
         </Section>
         <Section>
-          <ProductList/>
+          <ProductPartition label="智能先锋" />
+          <ProductPartition  label="都市丽人"/>
         </Section>
         <Section>Footer</Section>
       </Layout>

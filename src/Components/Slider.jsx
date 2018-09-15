@@ -23,7 +23,6 @@ export default class Slider extends Component {
     return (
       <Carousel
         autoPlay
-        cellAlign='center'
       >
         {
           imgUrls.map((url,idx) =><img key={idx} src={url}/>)

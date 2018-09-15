@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
 @import './base.css';
 @import './home.css';
+@import './product.css';
 
 .App {
   text-align: center;

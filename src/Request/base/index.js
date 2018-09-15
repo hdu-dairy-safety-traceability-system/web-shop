@@ -10,7 +10,7 @@ export default axios.create({
   paramsSerializer: function(params) {
     return Qs.stringify(params)
   },
-  timeout: 2000,
+  // timeout: 2000,
   responseType: 'json',
   responseEncoding: 'utf8',
 })

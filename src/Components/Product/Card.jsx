@@ -24,7 +24,7 @@ export default class ProductCard extends Component {
     const { data, loading} = this.props
     return (
       <Card
-        style={{ width: 300, margin: '30px' }}
+        style={{ width: 300, margin: '0 30px 30px 30px' }}
         cover={<img alt="Product Cover" src={data.cover} />}
         onClick={this.handleClick}
         loading={loading}
