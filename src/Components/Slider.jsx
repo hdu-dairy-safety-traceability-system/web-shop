@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+// import { Carousel } from 'react-responsive-carousel'
+// import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import Carousel from 'nuka-carousel'
 
 export default class Slider extends Component {
-  static defaultProps = {
-    imgUrls: [
-      'https://dummyimage.com/1000x400/000/fff&text=11111111111111111111',
-    ]
-  }
+  // 'https://dummyimage.com/1000x400/000/fff&text=11111111111111111111',
   static propTypes = {
     imgUrls: PropTypes.array,
   }
@@ -18,24 +15,18 @@ export default class Slider extends Component {
     this.state = {}
   }
   render() {
-    const {imgUrls} = this.props
+    let {imgUrls} = this.props
+    if(imgUrls === undefined || imgUrls.length === 0) {
+      imgUrls = ['http://dummyimage.com/1800x300']
+    }
+    console.log(imgUrls)
     return (
       <Carousel
-        showStatus={false}
-        showThumbs={false}
-        infiniteLoop
         autoPlay
-        emulateTouch
+        cellAlign='center'
       >
         {
-          imgUrls.map((url,idx) =>{
-            return (
-              <div key={idx}>
-                <img src={url}/>
-              </div>
-            )
-
-          })
+          imgUrls.map((url,idx) =><img key={idx} src={url}/>)
         }
       </Carousel>
     )

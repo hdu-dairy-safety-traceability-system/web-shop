@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Layout } from 'antd'
 
-import Slider from '@/Components/Slider'
+import ShopHeader from './Components/Header'
+import ProductList from '@/Components/Product/List'
+import Section from '@/Components/Layout/Section'
+const { Header, Content, Footer } = Layout
+
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <Slider/>
-      </div>
+      <Layout>
+        <Section className="shop-bgc"> 
+          <ShopHeader />
+        </Section>
+        <Section>
+          <ProductList/>
+        </Section>
+        <Section>Footer</Section>
+      </Layout>
     )
   }
 }

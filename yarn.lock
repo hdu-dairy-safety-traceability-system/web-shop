@@ -438,6 +438,13 @@ aws4@^1.8.0:
   version "1.8.0"
   resolved "http://registry.npm.taobao.org/aws4/download/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
 
+axios@^0.18.0:
+  version "0.18.0"
+  resolved "http://registry.npm.taobao.org/axios/download/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  dependencies:
+    follow-redirects "^1.3.0"
+    is-buffer "^1.1.5"
+
 axobject-query@^0.1.0:
   version "0.1.0"
   resolved "http://registry.npm.taobao.org/axobject-query/download/axobject-query-0.1.0.tgz#62f59dbc59c9f9242759ca349960e7a2fe3c36c0"
@@ -1965,6 +1972,24 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
+d3-color@1:
+  version "1.2.3"
+  resolved "http://registry.npm.taobao.org/d3-color/download/d3-color-1.2.3.tgz#6c67bb2af6df3cc8d79efcc4d3a3e83e28c8048f"
+
+d3-ease@^1.0.3:
+  version "1.0.5"
+  resolved "http://registry.npm.taobao.org/d3-ease/download/d3-ease-1.0.5.tgz#8ce59276d81241b1b72042d6af2d40e76d936ffb"
+
+d3-interpolate@^1.2.0:
+  version "1.3.2"
+  resolved "http://registry.npm.taobao.org/d3-interpolate/download/d3-interpolate-1.3.2.tgz#417d3ebdeb4bc4efcc8fd4361c55e4040211fd68"
+  dependencies:
+    d3-color "1"
+
+d3-timer@^1.0.4:
+  version "1.0.9"
+  resolved "http://registry.npm.taobao.org/d3-timer/download/d3-timer-1.0.9.tgz#f7bb8c0d597d792ff7131e1c24a36dd471a471ba"
+
 d@1:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/d/download/d-1.0.0.tgz#754bb5bfe55451da69a58b94d45f4c5b0462d58f"
@@ -2249,7 +2274,7 @@ dotenv-expand@4.2.0:
   version "4.2.0"
   resolved "http://registry.npm.taobao.org/dotenv-expand/download/dotenv-expand-4.2.0.tgz#def1f1ca5d6059d24a766e587942c21106ce1275"
 
-dotenv@4.0.0, dotenv@^4.0.0:
+dotenv@4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/dotenv/download/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
@@ -2668,6 +2693,10 @@ execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/exenv/download/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "http://registry.npm.taobao.org/expand-brackets/download/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -2958,7 +2987,7 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/flatten/download/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.5.8"
   resolved "http://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.5.8.tgz#1dbfe13e45ad969f813e86c00e5296f525c885a1"
   dependencies:
@@ -4951,6 +4980,15 @@ nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
+nuka-carousel@^4.3.11:
+  version "4.3.11"
+  resolved "http://registry.npm.taobao.org/nuka-carousel/download/nuka-carousel-4.3.11.tgz#ea3c1c528e8c586ee7157354d7e2352363b01dd5"
+  dependencies:
+    d3-ease "^1.0.3"
+    exenv "^1.2.0"
+    prop-types "^15.6.0"
+    react-move "^2.7.0"
+
 num2fraction@^1.2.2:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/num2fraction/download/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
@@ -5706,7 +5744,7 @@ qs@6.5.1:
   version "6.5.1"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
 
-qs@~6.5.2:
+qs@^6.5.2, qs@~6.5.2:
   version "6.5.2"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
@@ -6138,13 +6176,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app-rewired@^1.6.2:
-  version "1.6.2"
-  resolved "http://registry.npm.taobao.org/react-app-rewired/download/react-app-rewired-1.6.2.tgz#32ce90abc2c4e2b86c71e4e270bd36663b3b1c9a"
-  dependencies:
-    cross-spawn "^5.1.0"
-    dotenv "^4.0.0"
-
 react-dev-utils@^5.0.2:
   version "5.0.2"
   resolved "http://registry.npm.taobao.org/react-dev-utils/download/react-dev-utils-5.0.2.tgz#7bb68d2c4f6ffe7ed1184c5b0124fcad692774d2"
@@ -6199,6 +6230,13 @@ react-lazy-load@^3.0.12:
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "http://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-move@^2.7.0:
+  version "2.8.0"
+  resolved "http://registry.npm.taobao.org/react-move/download/react-move-2.8.0.tgz#63deaf6a0e58ca6769357abfcd91dde44d83a596"
+  dependencies:
+    d3-interpolate "^1.2.0"
+    d3-timer "^1.0.4"
 
 react-responsive-carousel@^3.1.41:
   version "3.1.41"
