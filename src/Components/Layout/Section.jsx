@@ -14,6 +14,7 @@ export default class Section extends Component {
       <div style={{
         position: 'relative',
         padding: '0 50px',
+        marginTop: '40px',
       }}>
         {children}
       </div>
