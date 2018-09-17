@@ -27,6 +27,14 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@types/history@^4.6.0":
+  version "4.7.0"
+  resolved "http://registry.npm.taobao.org/@types/history/download/@types/history-4.7.0.tgz#2fac51050c68f7d6f96c5aafc631132522f4aa3f"
+
+"@types/lodash@^4.14.77":
+  version "4.14.116"
+  resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.116.tgz#5ccf215653e3e8c786a58390751033a9adca0eb9"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/abab/download/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -437,6 +445,13 @@ aws-sign2@~0.7.0:
 aws4@^1.8.0:
   version "1.8.0"
   resolved "http://registry.npm.taobao.org/aws4/download/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
+
+axios@^0.16.2:
+  version "0.16.2"
+  resolved "http://registry.npm.taobao.org/axios/download/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
+  dependencies:
+    follow-redirects "^1.2.3"
+    is-buffer "^1.1.5"
 
 axios@^0.18.0:
   version "0.18.0"
@@ -2987,7 +3002,7 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/flatten/download/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-follow-redirects@^1.0.0, follow-redirects@^1.3.0:
+follow-redirects@^1.0.0, follow-redirects@^1.2.3, follow-redirects@^1.3.0:
   version "1.5.8"
   resolved "http://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.5.8.tgz#1dbfe13e45ad969f813e86c00e5296f525c885a1"
   dependencies:
@@ -3071,6 +3086,10 @@ function-bind@^1.1.1:
 functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/functional-red-black-tree/download/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
+
+fuse.js@^3.0.0:
+  version "3.2.1"
+  resolved "http://registry.npm.taobao.org/fuse.js/download/fuse.js-3.2.1.tgz#6320cb94ce56ec9755c89ade775bcdbb0358d425"
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -3323,7 +3342,7 @@ he@1.1.x:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
-history@^4.7.2:
+history@4.7.2, history@^4.7.2:
   version "4.7.2"
   resolved "http://registry.npm.taobao.org/history/download/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
   dependencies:
@@ -3512,6 +3531,12 @@ ignore@^3.3.3:
   version "3.3.10"
   resolved "http://registry.npm.taobao.org/ignore/download/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
 
+immutability-helper@^2.4.0:
+  version "2.8.1"
+  resolved "http://registry.npm.taobao.org/immutability-helper/download/immutability-helper-2.8.1.tgz#3c5ec05fcd83676bfae7146f319595243ad904f4"
+  dependencies:
+    invariant "^2.2.0"
+
 immutable@^3.7.4:
   version "3.8.2"
   resolved "http://registry.npm.taobao.org/immutable/download/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
@@ -3601,7 +3626,7 @@ intersperse@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/intersperse/download/intersperse-1.0.0.tgz#f2561fb1cfef9f5277cc3347a22886b4351a5181"
 
-invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.4:
+invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "http://registry.npm.taobao.org/invariant/download/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
@@ -4507,6 +4532,10 @@ lodash.throttle@^4.0.0:
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "http://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash@4.17.5:
+  version "4.17.5"
+  resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
 "lodash@>=3.5 <5", lodash@^4.15.0, lodash@^4.16.5, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.11"
@@ -5740,6 +5769,10 @@ q@^1.1.2:
   version "1.5.1"
   resolved "http://registry.npm.taobao.org/q/download/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
+qs@6.4.0:
+  version "6.4.0"
+  resolved "http://registry.npm.taobao.org/qs/download/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+
 qs@6.5.1:
   version "6.5.1"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
@@ -6024,7 +6057,7 @@ rc-select@~8.2.6:
     react-lifecycles-compat "^3.0.2"
     warning "^4.0.2"
 
-rc-slider@~8.6.0:
+rc-slider@^8.3.1, rc-slider@~8.6.0:
   version "8.6.2"
   resolved "http://registry.npm.taobao.org/rc-slider/download/rc-slider-8.6.2.tgz#ee0996b6c6b3f1f6fe8f2b7b2c714ba256ad2909"
   dependencies:
@@ -6268,6 +6301,13 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
+
+react-search-input@^0.11.3:
+  version "0.11.3"
+  resolved "http://registry.npm.taobao.org/react-search-input/download/react-search-input-0.11.3.tgz#3dd1f9fc584b6bc40a6ee133ae042b6fbb7ae8dd"
+  dependencies:
+    fuse.js "^3.0.0"
+    prop-types "^15.5.8"
 
 react-slick@~0.23.1:
   version "0.23.1"
@@ -6669,6 +6709,20 @@ schema-utils@^0.3.0:
   resolved "http://registry.npm.taobao.org/schema-utils/download/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
+
+searchkit@^2.3.1-alpha.3:
+  version "2.3.1-alpha.3"
+  resolved "http://registry.npm.taobao.org/searchkit/download/searchkit-2.3.1-alpha.3.tgz#8d151599f8469f948ac0e2ae58ae165d29f16224"
+  dependencies:
+    "@types/history" "^4.6.0"
+    "@types/lodash" "^4.14.77"
+    axios "^0.16.2"
+    history "4.7.2"
+    immutability-helper "^2.4.0"
+    lodash "4.17.5"
+    prop-types "^15.5.8"
+    qs "6.4.0"
+    rc-slider "^8.3.1"
 
 select-hose@^2.0.0:
   version "2.0.0"
