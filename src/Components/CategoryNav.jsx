@@ -40,23 +40,23 @@ export default class CategoryNav extends Component {
           <Icon type="fund" theme="outlined" />礼品
         </Item>
         
-        <Item key="1">
-          <Icon type="fund" theme="outlined" />礼品
-        </Item>
-
-        <Item key="2">
-          <Icon type="fund" theme="outlined" /> 礼品
-        </Item>
-
-        <Item key="3">
-          <Icon type="fund" theme="outlined" /> 礼品
-        </Item>
-
-        <Item key="4">
-          <Icon type="fund" theme="outlined" />礼品
-        </Item>
-
         <Item key="5">
+          <Icon type="fund" theme="outlined" />礼品
+        </Item>
+
+        <Item key="6">
+          <Icon type="fund" theme="outlined" /> 礼品
+        </Item>
+
+        <Item key="7">
+          <Icon type="fund" theme="outlined" /> 礼品
+        </Item>
+
+        <Item key="8">
+          <Icon type="fund" theme="outlined" />礼品
+        </Item>
+
+        <Item key="9">
           <Icon type="fund" theme="outlined" /> 礼品
         </Item>
         <SubMenu title={<span><Icon type="fund" theme="outlined" />SubMenu</span>}>

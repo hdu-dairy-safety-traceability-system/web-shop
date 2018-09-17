@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import SearchInput, { createFilter } from 'react-search-input'
-
+import {
+  SearchBox,
+  RefinementListFilter,
+  Hits,
+  HitsStats,
+  SearchkitComponent,
+  SelectedFilters,
+  MenuFilter,
+  HierarchicalMenuFilter,
+  Pagination,
+  ResetFilters,
+  SearchkitManager,
+  SearchkitProvider,
+} from 'searchkit'
+    
 import ProductReq from '@/Request/home/product'
+import api from '@/Request/api.js'
 import './react-search-input.css'
-let products = []
+
+const searchkit = new SearchkitManager(api.root)
 
 export default class SearchList extends Component {
   static propTypes = {
-    prop: PropTypes
   }
   static KEYS_TO_FILTERS = ['title','description']
   constructor(props) {
@@ -18,34 +33,31 @@ export default class SearchList extends Component {
       products: [],
     }
   }
-  searchUpdate = (term) => {
+  componentDidMount() {
     ProductReq.then(resp => {
       this.setState({
-        searchItem: term,
         products: resp.data.products
       })
     })
+
+  }
+  searchUpdate = (term) => {
+    this.setState({
+      searchTerm: term
+    })
   }
   render() {
-    const {products, searchTerm} = this.state
     console.log(this.state)
+    const {products, searchTerm} = this.state
     const filteredProducts = products.filter(createFilter(searchTerm, this.KEYS_TO_FILTERS))
     return (
       <div>
-        <SearchInput
-          className="search-input"
-          onChange={this.searchUpdate}
-        />
-        {
-          filteredProducts.map((product,idx) => {
-            return (
-              <div className="product" key={idx}>
-                <div className="from">{product.title}</div>
-                <div className="subject">{product.description}</div>
-              </div>
-            )
-          })
-        }
+        <SearchkitProvider searchkit={searchkit}>
+          <div>
+            <SearchBox/>
+            <Hits/>
+          </div>
+        </SearchkitProvider>
       </div>
     )
   }

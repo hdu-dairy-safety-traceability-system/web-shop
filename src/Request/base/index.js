@@ -1,9 +1,8 @@
 import axios from 'axios'
 import Qs from 'qs'
+import api from '@/Request/api'
 
-const baseURL = process.env.NODE_ENV === 'development' 
-  ? 'https://www.easy-mock.com/mock/5b9c752c9c53ef2876d2929a/shop'
-  : 'null'
+const baseURL = api.root 
 
 export default axios.create({
   baseURL: baseURL,

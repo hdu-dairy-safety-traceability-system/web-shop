@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import List from './List'
 export default class Partition extends Component {
   static propTypes = {
-    prop: PropTypes
   }
   constructor(props) {
     super(props) 
