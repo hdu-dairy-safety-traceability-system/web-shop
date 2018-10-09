@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import Pages from './pages'
+import Pages from './pages/index.jsx'
 import '@/CSS/App.css'
 
 class App extends Component {
