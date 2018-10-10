@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/runtime": "^7.1.2",
     "antd": "^3.9.2",
     "autoprefixer": "7.1.6",
@@ -60,7 +61,6 @@
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx src/ --fix -f table"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-decorators": "^7.1.0",
     "eslint": "^5.5.0",
     "eslint-plugin-babel": "^5.2.0",
     "eslint-plugin-react": "^7.11.1"
@@ -104,9 +104,12 @@
       "react-app"
     ],
     "plugins": [
-      ["@babel/plugin-syntax-decorators", {
-        "decoratorsBeforeExport": true
-      }]
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
     ]
   },
   "eslintConfig": {
