@@ -5,7 +5,7 @@ import ShopHeader from './Components/Header'
 import ProductPartition from '@/Components/Product/Partition'
 import Section from '@/Components/Layout/Section'
 import CategoryNav from '@/Components/CategoryNav'
-import SearchList from '@/Components/Search/List'
+import SearchBar from '@/Components/Search/Bar'
 const { Header, Content, Footer } = Layout
 
 
@@ -14,7 +14,7 @@ export default class Home extends Component {
     return (
       <Layout>
         <Section> 
-          <SearchList />
+          <SearchBar />
           <ShopHeader />
         </Section>
         <Section className="nav">
