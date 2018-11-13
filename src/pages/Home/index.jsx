@@ -15,7 +15,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Menu> </Menu>
+        {/* <Menu> </Menu> */}
         <Main>
           <Section> 
             <SearchBar />

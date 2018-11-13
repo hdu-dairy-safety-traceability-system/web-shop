@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Icon, Avatar,Card} from 'antd'
+// import { Icon, Avatar,Card} from 'antd'
 
-const {Grid, Meta} = Card
+// const {Grid, Meta} = Card
 export default class ProductCard extends Component {
   static defaultProps = {
     data: {
@@ -23,18 +23,19 @@ export default class ProductCard extends Component {
     loading
     const { data, loading} = this.props
     return (
-      <Card
-        style={{ width: 300, margin: '0 30px 30px 30px' }}
-        cover={<img alt="Product Cover" src={data.cover} />}
-        onClick={this.handleClick}
-        loading={loading}
-        hoverable
-      >
-        <Meta
-          title={data.title}
-          description={data.description}
-        />
-      </Card>
+      <div></div>
+      // <Card
+      //   style={{ width: 300, margin: '0 30px 30px 30px' }}
+      //   cover={<img alt="Product Cover" src={data.cover} />}
+      //   onClick={this.handleClick}
+      //   loading={loading}
+      //   hoverable
+      // >
+      //   <Meta
+      //     title={data.title}
+      //     description={data.description}
+      //   />
+      // </Card>
     )
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
-import {Icon} from 'antd'
+// import {Icon} from 'antd'
 const styles = {
   topHeader: {
     height: '100px',
@@ -43,7 +43,7 @@ export default class TopHeader extends Component {
     return (
       <div className={classes.topHeader}>
         <div className={classes.icon}>
-          <Icon  type="shop" theme="outlined" />
+          {/* <Icon  type="shop" theme="outlined" /> */}
           <span>商城</span>
         </div>
         <ul className={classes.list}>

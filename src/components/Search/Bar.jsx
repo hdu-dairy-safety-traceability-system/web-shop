@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Input} from 'antd'
 import injectSheet from 'react-jss'
-
-const {Search} = Input
+import { SearchBar as AmSearchBar } from 'antd-mobile'
 
 import IndexSearch from '@/network/search'
 import throttle from '@/utils/throttle'
@@ -47,8 +45,8 @@ export default class SearchBar extends Component {
     }
   }
 
-  handleSearch = e => {
-    let searchTerm = e.target.value
+  handleSearch = text => {
+    let searchTerm = text
     if (searchTerm !== '') {
       IndexSearch({ q: searchTerm })
         .then(res => {
@@ -73,9 +71,9 @@ export default class SearchBar extends Component {
    */
   throttledSearch = throttle(this.handleSearch, 500);
 
-  handleChange = e => {
-    e.persist()
-    this.throttledSearch(e)
+  handleChange = (text,e )=> {
+    // e.persist()
+    this.throttledSearch(text)
   };
 
   render() {
@@ -83,11 +81,10 @@ export default class SearchBar extends Component {
     const { searchRes } = this.state
     return (
       <div className={classes.searchInput}>
-        <Search
-          placeholder="搜索热门商品"
-          onSearch={this.handleChange}
-          onChange={this.handleChange}
-          size="large"
+        <AmSearchBar 
+          onSubmit={this.handleChange} 
+          onChange={this.handleChange} 
+          placeholder="Search" 
         />
         <ul className={classes.list}>
           {searchRes.map((res, idx) => {

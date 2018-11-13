@@ -12,8 +12,8 @@ export default class Section extends Component {
     const {children} = this.props
     return (
       <div style={{
-        padding: '0 50px',
-        marginTop: '40px',
+        // padding: '0 50px',
+        // marginTop: '40px',
       }}>
         {children}
       </div>
