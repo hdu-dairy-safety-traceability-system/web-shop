@@ -5,7 +5,11 @@ const styles = {
     width: '50%', 
     display: 'inline-block',
     boxSizing: 'border-box', 
-    padding: '0 20px'
+    '& > p': {
+      padding: '0 1em',
+      margin: '0.5em 0'
+    }
+    // padding: '0 20px'
   },
   responsiveImg: { 
     display: 'block', 
