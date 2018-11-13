@@ -17,10 +17,6 @@ export default class Header extends Component {
   }
   render() {
     const { urls } = this.state
-    return (
-      <div>
-        <Slider imgUrls={urls}/>
-      </div>
-    )
+    return (<Slider imgUrls={urls}/>)
   }
 }

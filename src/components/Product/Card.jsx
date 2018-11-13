@@ -1,7 +1,27 @@
 import React, { Component } from 'react'
-// import { Icon, Avatar,Card} from 'antd'
-
-// const {Grid, Meta} = Card
+import withStyles from 'react-jss'
+const styles = {
+  cardContianer: {
+    width: '50%', 
+    display: 'inline-block',
+    boxSizing: 'border-box', 
+    padding: '0 20px'
+  },
+  responsiveImg: { 
+    display: 'block', 
+    height: 'auto', 
+    maxWidth: '100%' 
+  },
+  price: {
+    color: '#f8513b',
+    '&::before': {
+      //@ref  https://stackoverflow.com/questions/40965977/cant-target-before-pseudo-selector-in-jss
+      content: '"¥"',
+      marginRight: '3px'
+    },
+  }
+}
+@withStyles(styles)
 export default class ProductCard extends Component {
   static defaultProps = {
     data: {
@@ -20,22 +40,13 @@ export default class ProductCard extends Component {
   }
 
   render() {
-    loading
-    const { data, loading} = this.props
+    const { data, loading,classes} = this.props
     return (
-      <div></div>
-      // <Card
-      //   style={{ width: 300, margin: '0 30px 30px 30px' }}
-      //   cover={<img alt="Product Cover" src={data.cover} />}
-      //   onClick={this.handleClick}
-      //   loading={loading}
-      //   hoverable
-      // >
-      //   <Meta
-      //     title={data.title}
-      //     description={data.description}
-      //   />
-      // </Card>
+      <div className={classes.cardContianer}>
+        <img className={classes.responsiveImg} src={data.cover}/>
+        <p>{data.description}</p>
+        <p className={classes.price}>{data.price}</p>
+      </div>
     )
   }
 }

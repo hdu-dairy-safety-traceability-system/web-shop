@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import { Layout } from 'antd'
 
 import ShopHeader from './components/Header'
+import TenGrids from './components/TenGrids'
 import ProductPartition from '@/components/Product/Partition'
 import Section from '@/components/Layout/Section'
 import Main from '@/components/Layout/Main'
@@ -22,11 +23,10 @@ export default class Home extends Component {
             <ShopHeader />
           </Section>
           <Section className="nav">
-            <CategoryNav />
+            <TenGrids />
           </Section>
           <Section>
             <ProductPartition label="智能先锋" />
-            <ProductPartition  label="都市丽人"/>
           </Section>
           <Section>Footer</Section>
         </Main>

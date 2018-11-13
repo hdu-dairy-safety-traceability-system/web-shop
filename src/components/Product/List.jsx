@@ -24,7 +24,7 @@ export default class ProductList extends Component {
   render() {
     const {products,loading} = this.state
     return (
-      <div style={flex}>
+      <div style={{ textAlign: 'left', }}>
         {products.map( (product,idx) => (<Card key={idx} data={product} loading={loading} />) ) }
       </div>
     )

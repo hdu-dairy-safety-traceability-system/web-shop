@@ -10,11 +10,11 @@ const styles = {
   searchInput: {
     padding: '10px 10px',
     position: 'relative',
-    height: '70px',
+    // height: '70px',
     zIndex: '600',
   },
   list: {
-    position: 'relative',
+    position: 'absolute',
     listStyleType: 'none',
     backgroundColor:' #fff',
     margin: '5px 0',
@@ -71,8 +71,7 @@ export default class SearchBar extends Component {
    */
   throttledSearch = throttle(this.handleSearch, 500);
 
-  handleChange = (text,e )=> {
-    // e.persist()
+  handleChange = (text )=> {
     this.throttledSearch(text)
   };
 

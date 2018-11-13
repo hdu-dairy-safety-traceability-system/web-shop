@@ -12,7 +12,7 @@ export default class Partition extends Component {
     const {label, category} = this.props
     return (
       <div className="partition">
-        <h1>{label}</h1>
+        <h1 style={{ color: '#c279d0'}}>{label}</h1>
         <List />
       </div>
     )
