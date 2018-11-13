@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Slider from '@/Components/Slider'
-import sliderReq from '@/Request/home/slider'
+import Slider from '@/components/Slider'
+import sliderReq from '@/network/home/slider'
 export default class Header extends Component {
   constructor(props) {
     super(props)

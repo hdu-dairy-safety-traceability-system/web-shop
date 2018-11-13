@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import api from '@/Request/api.js'
+import api from '@/network/api.js'
 
 const hitedItem = (props) => {
   return (

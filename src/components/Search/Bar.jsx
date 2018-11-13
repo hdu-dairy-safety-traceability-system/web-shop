@@ -5,8 +5,8 @@ import injectSheet from 'react-jss'
 
 const {Search} = Input
 
-import IndexSearch from '@/Request/search'
-import throttle from '@/Utils/throttle'
+import IndexSearch from '@/network/search'
+import throttle from '@/utils/throttle'
 
 const styles = {
   searchInput: {

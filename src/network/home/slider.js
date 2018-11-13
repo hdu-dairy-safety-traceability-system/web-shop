@@ -1,4 +1,4 @@
-import request from '@/Request/base'
+import request from '@/network/base'
 
 export default request.get(
   '/slider-list',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Card from './Card'
-import productReq from '@/Request/home/product'
+import productReq from '@/network/home/product'
 
 export default class ProductList extends Component {
   
@@ -32,7 +32,7 @@ export default class ProductList extends Component {
 }
 
 const flex = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-around',
+  // display: 'flex',
+  // flexWrap: 'wrap',
+  // justifyContent: 'space-around',
 }

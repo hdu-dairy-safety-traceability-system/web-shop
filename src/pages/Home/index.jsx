@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 // import { Layout } from 'antd'
 
-import ShopHeader from './Components/Header'
-import ProductPartition from '@/Components/Product/Partition'
-import Section from '@/Components/Layout/Section'
-import Main from '@/Components/Layout/Main'
-import Menu from '@/Components/Menu'
-import CategoryNav from '@/Components/CategoryNav'
-import SearchBar from '@/Components/Search/Bar'
+import ShopHeader from './components/Header'
+import ProductPartition from '@/components/Product/Partition'
+import Section from '@/components/Layout/Section'
+import Main from '@/components/Layout/Main'
+import Menu from '@/components/Menu'
+import CategoryNav from '@/components/CategoryNav'
+import SearchBar from '@/components/Search/Bar'
 // const { Header, Content, Footer } = Layout
 
 

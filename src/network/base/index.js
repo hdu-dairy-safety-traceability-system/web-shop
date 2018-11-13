@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Qs from 'qs'
-import api from '@/Request/api'
+import api from '@/network/api'
 
 const baseURL = api.root 
 
