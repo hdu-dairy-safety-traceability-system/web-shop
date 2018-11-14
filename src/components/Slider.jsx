@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import { Carousel } from 'react-responsive-carousel'
-// import 'react-responsive-carousel/lib/styles/carousel.min.css'
-// import Carousel from 'nuka-carousel'
 import { Carousel, WingBlank } from 'antd-mobile'
 export default class Slider extends Component {
   // 'https://dummyimage.com/1000x400/000/fff&text=11111111111111111111',

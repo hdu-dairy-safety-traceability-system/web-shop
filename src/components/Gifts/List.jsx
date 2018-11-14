@@ -44,9 +44,3 @@ export default class ProductList extends Component {
     )
   }
 }
-
-const flex = {
-  // display: 'flex',
-  // flexWrap: 'wrap',
-  // justifyContent: 'space-around',
-}
