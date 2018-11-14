@@ -3,12 +3,13 @@ import React, { Component } from 'react'
 
 import ShopHeader from './components/Header'
 import TenGrids from './components/TenGrids'
-import ProductPartition from '@/components/Product/Partition'
+import GiftsPartition from '@/components/Gifts/Partition'
 import Section from '@/components/Layout/Section'
 import Main from '@/components/Layout/Main'
 import Menu from '@/components/Menu'
 import CategoryNav from '@/components/CategoryNav'
 import SearchBar from '@/components/Search/Bar'
+import Footer from '@/components/Footer'
 // const { Header, Content, Footer } = Layout
 
 
@@ -26,9 +27,11 @@ export default class Home extends Component {
             <TenGrids />
           </Section>
           <Section>
-            <ProductPartition label="智能先锋" />
+            <GiftsPartition label="热门推荐" />
           </Section>
-          <Section>Footer</Section>
+          <Footer>
+            我也是有底线的
+          </Footer>
         </Main>
       </div>
     )
