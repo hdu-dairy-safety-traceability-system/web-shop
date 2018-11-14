@@ -12,7 +12,7 @@ export default class Pages extends Component {
       <div>
         <Switch>
           <Route path="/profile" component={Profile}></Route>
-          <Route exect path="/test" component={Test}></Route>
+          <Route exect path="/cart" component={Test}></Route>
           <Route exect path="/" component={Home}></Route>
         </Switch>
       </div>
