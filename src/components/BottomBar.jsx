@@ -59,7 +59,7 @@ export default class BottomBar extends Component {
                 title={title}
                 key={key}
                 icon={<Link to={to}><Icon icon={icon} className={classes.defaultIcon} /></Link>}
-                selectedIcon={<Icon icon={home} className={classes.selectedIcon}/>}
+                selectedIcon={<Icon icon={icon} className={classes.selectedIcon}/>}
                 selected={selectedTab === idx}
                 onPress={() => {this.handlePress(idx)}}
               />
