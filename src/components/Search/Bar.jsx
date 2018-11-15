@@ -8,7 +8,6 @@ import throttle from '@/utils/throttle'
 
 const styles = {
   searchInput: {
-    padding: '10px 10px',
     position: 'relative',
     // height: '70px',
     zIndex: '600',
@@ -41,7 +40,8 @@ export default class SearchBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchRes: []
+      searchRes: [],
+      keyWd: ''
     }
   }
 
@@ -62,7 +62,7 @@ export default class SearchBar extends Component {
     } else {
       this.setState({ searchRes: [] })
     }
-  };
+  }
   /**
    * 有个问题: 现在触发方法应该取消前一次触发的方法
    *
@@ -72,17 +72,21 @@ export default class SearchBar extends Component {
   throttledSearch = throttle(this.handleSearch, 500);
 
   handleChange = (text )=> {
+    this.setState({ keyWd: text })
     this.throttledSearch(text)
-  };
+  }
 
   render() {
     const { classes } = this.props
-    const { searchRes } = this.state
+    const { searchRes,keyWd } = this.state
     return (
       <div className={classes.searchInput}>
+        {/* TODO Don't use this component */}
         <AmSearchBar 
           onSubmit={this.handleChange} 
-          onChange={this.handleChange} 
+          onChange={this.handleChange}
+          onBlur={() => this.setState({searchRes: [], keyWd: ''})}
+          value={keyWd}
           placeholder="Search" 
         />
         <ul className={classes.list}>
