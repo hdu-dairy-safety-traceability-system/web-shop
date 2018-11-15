@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import FullCard from './FullCard'
 
-import GiftsFilter from '@/components/Gifts/Filter'
-export default class Cart extends Component {
+export default class GiftsFilter extends Component {
   static propTypes = {
   }
 
   render() {
     return (
       <div>
-        <GiftsFilter />
+        <FullCard />
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import withStyles from 'react-jss'
 
-import Card from './Card'
+import HalfCard from './HalfCard'
 import productReq from '@/network/home/product'
 
 const styles = {
@@ -39,7 +39,7 @@ export default class ProductList extends Component {
     const {products,loading} = this.state
     return (
       <div className={classes.list}>
-        {products.map((product, idx) => (<Card key={idx} data={product} loading={loading} />) ) }
+        {products.map((product, idx) => (<HalfCard key={idx} data={product} loading={loading} />) ) }
       </div>
     )
   }
