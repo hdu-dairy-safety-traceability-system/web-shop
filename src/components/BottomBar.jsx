@@ -45,9 +45,8 @@ export default class BottomBar extends Component {
   render() {
     const {classes} = this.props
     const {selectedTab} = this.state
-    console.log(this.state)
     return (
-      <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
+      <div style={{ position: 'fixed', bottom: 0, width: '100%'}}>
         <TabBar
           tintColor="#aaa"
           unselectedTintColor="#000"

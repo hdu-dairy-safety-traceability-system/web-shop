@@ -9,7 +9,6 @@ import throttle from '@/utils/throttle'
 const styles = {
   searchInput: {
     position: 'relative',
-    // height: '70px',
     zIndex: '600',
   },
   list: {

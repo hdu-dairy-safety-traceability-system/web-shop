@@ -28,9 +28,11 @@ export default class ProductCard extends Component {
     const { data, loading, classes } = this.props
     return (
       <div className={classes.cardContianer}>
-        <img className={classes.responsiveImg} src={data.cover} />
-        <p>{data.description}</p>
-        <p className={classes.price}>{data.price}</p>
+        <a href="/">
+          <img className={classes.responsiveImg} src={data.cover} />
+          <p>{data.description}</p>
+          <p className={classes.price}>{data.price}</p>
+        </a>
       </div>
     )
   }
