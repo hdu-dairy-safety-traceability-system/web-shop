@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import GiftsFilter from '@/components/Gifts/Filter'
+import ButtomBar from '@/components/BottomBar'
+
 export default class Cart extends Component {
   static propTypes = {
   }
@@ -10,6 +12,7 @@ export default class Cart extends Component {
     return (
       <div>
         <GiftsFilter />
+        <ButtomBar />
       </div>
     )
   }

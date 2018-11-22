@@ -1,25 +1,32 @@
-
 import Home from '@/pages/Home'
 import Profile from '@/pages/Profile'
 import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
-
+import Gifts from '@/pages/Gifts'
+import NoMatch from '@/pages/Error/NoMatch'
 export default [
   {
-    exect: true,
+    exact: true,
+    path: '/',
+    component: Home
+  }, {
+    exact: true,
     path: '/profile',
     component: Profile
   }, {
-    exect: true,
+    exact: true,
     path: '/cart',
-    component:  Cart
+    component: Cart
   }, {
-    exect: true,
+    exact: true,
     path: '/login',
     component: Login
   }, {
-    exect: true,
-    path: '/',
-    component:  Home 
+    exact: true,
+    path: '/gifts',
+    component: Gifts
+  }, {
+    component: NoMatch,
   }
+
 ]

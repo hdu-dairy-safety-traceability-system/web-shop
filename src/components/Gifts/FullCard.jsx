@@ -18,15 +18,16 @@ export default class FullCard extends Component {
   }
 
   render() {
+    const {data} = this.props
     return (
       <Flex row="true" style={{ height: '90px', borderBottom: 'solid 1px #d2d2d2' }}>
         <div style={{width: '25%'}}>
-          <Image  src={mockData.cover}/>
+          <Image  src={data.cover}/>
         </div>
         <div style={{padding: '10px',height: '100%', boxSizing: 'border-box'}}>
-          <h4 style={{margin: 0}}>{mockData.description}</h4>
+          <h4 style={{margin: 0}}>{data.description}</h4>
           <WhiteSpace />
-          <Price  value={mockData.price}/>
+          <Price  value={data.price}/>
           <WhiteSpace />
           <span>{parseInt(Math.random() * 10000)} 评论</span>
         </div>

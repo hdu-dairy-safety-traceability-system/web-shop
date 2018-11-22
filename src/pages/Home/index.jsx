@@ -10,6 +10,8 @@ import Menu from '@/components/Menu'
 import CategoryNav from '@/components/CategoryNav'
 import SearchBar from '@/components/Search/Bar'
 import Footer from '@/components/Footer'
+
+import ButtomBar from '@/components/BottomBar'
 // const { Header, Content, Footer } = Layout
 
 export default class Home extends Component {
@@ -32,6 +34,7 @@ export default class Home extends Component {
             我也是有底线的
           </Footer>
         </Main>
+        <ButtomBar />
       </div>
     )
   }

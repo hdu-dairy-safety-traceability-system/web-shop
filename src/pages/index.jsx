@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import ButtomBar from '@/components/BottomBar'
 import routes from '@/routes/index'
 
 export default class Pages extends Component {
@@ -11,12 +10,10 @@ export default class Pages extends Component {
         <Switch>
           {
             routes.map((route,idx) => (
-              <Route key={idx} path="/profile" {...route}/>
+              <Route key={idx}  {...route}/>
             ))
           }
         </Switch>
-
-        <ButtomBar />
       </div>
     )
   }
