@@ -45,6 +45,7 @@ export default class GiftsList extends Component {
   render() {
     const {classes, full} = this.props
     const {products,loading} = this.state
+    console.log(products)
     return (
       <div className={full ?  '' : classes.list}>
         {products.map(
