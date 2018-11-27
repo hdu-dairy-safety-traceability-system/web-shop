@@ -7,6 +7,16 @@ import {connect} from 'react-redux'
 import {login, loginSuccess} from '@/redux/actions'
 import styles from '@/jss/components/login'
 
+function toast(type) {
+  switch(type) {
+  case 'failed': 
+    Toast.fail('用户名或密码错误')
+    break
+  case 'success': 
+    Toast.info('登陆成功！')
+    break
+  }
+}
 
 @connect( store => ({state: store.login}), {login,loginSuccess})
 @withStyles(styles)
@@ -18,10 +28,10 @@ export default class Login extends Component {
     password: '123456'
   }
 
-  UNSAFE_componentWillReceiveProps() {
-    this.toast(this.props.state.loginState)
+  static getDerivedStateFromProps(props, state) {
+    toast(props.state.loginState)
+    return null
   }
-
   handleChange = (term) => {
     this.setState(term)
   }
@@ -30,16 +40,7 @@ export default class Login extends Component {
     const state = this.props.login(this.state)
     console.log(state)
   }
-  toast(type) {
-    switch(type) {
-    case 'failed': 
-      Toast.fail('用户名或密码错误')
-      break
-    case 'success': 
-      Toast.info('登陆成功！')
-      break
-    }
-  }
+
   render() {
     const {classes, state} = this.props
     const {username, password} = this.state
