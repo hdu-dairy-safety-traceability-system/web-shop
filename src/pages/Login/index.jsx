@@ -2,25 +2,30 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {Button, List, NavBar, Icon,InputItem} from 'antd-mobile'
 import withStyles from 'react-jss'
+import {connect} from 'react-redux'
 
+import {login} from '@/redux/actions'
 import styles from '@/jss/components/login'
+
+@connect( store => ({loginSate: store.login}), {login})
 @withStyles(styles)
 export default class Login extends Component {
   static propTypes = {
   }
   state = {
-    username: '',
-    password: ''
+    username: 'test',
+    password: '123456'
   }
   handleChange = (term) => {
     this.setState(term)
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    console.log(this.props.loginSate, this.props.login(this.state))
+    // login(this.state)
   }
   render() {
-    const {classes} = this.props
+    const {classes, loginSate} = this.props
     const {username, password} = this.state
     return (
       <div>
