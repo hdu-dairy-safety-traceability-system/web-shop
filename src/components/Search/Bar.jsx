@@ -11,6 +11,7 @@ const styles = {
   searchInput: {
     position: 'relative',
     zIndex: '600',
+    padding: '3px 1em',
   },
   list: {
     position: 'absolute',

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {NavBar} from 'antd-mobile'
 // import { Layout } from 'antd'
 
 import ShopHeader from './components/Header'
@@ -21,8 +22,10 @@ export default class Home extends Component {
         {/* <Menu> </Menu> */}
         <Main>
           <Section> 
+            {/* <NavBar mode="light"> */}
             <SearchBar />
-            <ShopHeader />
+            {/* </NavBar> */}
+            {/* <ShopHeader /> */}
           </Section>
           <Section className="nav">
             <TenGrids />
