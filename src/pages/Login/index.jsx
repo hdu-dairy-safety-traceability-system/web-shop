@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {Button, List, Toast, NavBar, Icon,InputItem} from 'antd-mobile'
 import withStyles from 'react-jss'
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router'
 
 import {login, loginSuccess} from '@/redux/actions'
 import styles from '@/jss/components/login'
@@ -18,11 +19,15 @@ function toast(type) {
   }
 }
 
-@connect( store => ({state: store.login}), {login,loginSuccess})
+@connect( store => ({state: store.login}), {login})
 @withStyles(styles)
 export default class Login extends Component {
   static propTypes = {
+    classes: PropTypes.object,
+    state: PropTypes.object.isRequired,
+    login: PropTypes.func.isRequired,
   }
+  
   state = {
     username: 'test',
     password: '123456'
@@ -37,8 +42,8 @@ export default class Login extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    const state = this.props.login(this.state)
-    console.log(state)
+    this.props.login(this.state)
+ 
   }
 
   render() {
@@ -47,30 +52,38 @@ export default class Login extends Component {
 
     return (
       <div>
-        <NavBar
-          mode="light"
-          icon={<Icon type="left" />}
-          onLeftClick={() => console.log('onLeftClick')}
-        >密码登陆</NavBar>
-        <List>
-          <InputItem
-            className={classes.input}
-            placeholder="请输入帐号"
-            updatePlaceholder
-            value={username}
-            onChange={(text) =>this.handleChange({username: text}) }
-          />
-          <InputItem
-            className={classes.input}
-            placeholder="请输入密码"
-            type="password"
-            updatePlaceholder
-            value={password}
-            onChange={(text) => this.handleChange({ password: text })}
-          />
-        </List>
-        <Button onClick={this.handleSubmit} type="warning" className={classes.button}>登陆</Button>
+        {
+          state.logined ? <Redirect to='/'/>
+            :  (<div>
+              <NavBar
+                mode="light"
+                icon={<Icon type="left" />}
+                onLeftClick={() => console.log('onLeftClick')}
+              >
+              密码登陆
+              </NavBar>
+              <List>
+                <InputItem
+                  className={classes.input}
+                  placeholder="请输入帐号"
+                  updatePlaceholder
+                  value={username}
+                  onChange={(text) =>this.handleChange({username: text}) }
+                />
+                <InputItem
+                  className={classes.input}
+                  placeholder="请输入密码"
+                  type="password"
+                  updatePlaceholder
+                  value={password}
+                  onChange={(text) => this.handleChange({ password: text })}
+                />
+              </List>
+              <Button onClick={this.handleSubmit} type="warning" className={classes.button}>登陆</Button>
+            </div>)
         
+        }
+       
       </div>
     )
   }
