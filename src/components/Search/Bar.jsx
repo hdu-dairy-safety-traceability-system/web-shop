@@ -5,6 +5,7 @@ import { SearchBar as AmSearchBar } from 'antd-mobile'
 
 import IndexSearch from '@/network/search'
 import throttle from '@/utils/throttle'
+import Input from '@/components/base/Input'
 
 const styles = {
   searchInput: {
@@ -70,7 +71,7 @@ export default class SearchBar extends Component {
    */
   throttledSearch = throttle(this.handleSearch, 500);
 
-  handleChange = (text )=> {
+  handleChange = (text)=> {
     this.setState({ keyWd: text })
     this.throttledSearch(text)
   }
@@ -80,14 +81,20 @@ export default class SearchBar extends Component {
     const { searchRes,keyWd } = this.state
     return (
       <div className={classes.searchInput}>
-        {/* TODO Don't use this component */}
-        <AmSearchBar 
-          onSubmit={this.handleChange} 
+        <Input 
           onChange={this.handleChange}
           onBlur={() => this.setState({searchRes: [], keyWd: ''})}
           value={keyWd}
           placeholder="Search" 
         />
+        {/* TODO Don't use this component */}
+        {/* <AmSearchBar 
+          onSubmit={this.handleChange}
+          onChange={this.handleChange}
+          onBlur={() => this.setState({searchRes: [], keyWd: ''})}
+          value={keyWd}
+          placeholder="Search" 
+        /> */}
         <ul className={classes.list}>
           {searchRes.map((res, idx) => {
             return (
