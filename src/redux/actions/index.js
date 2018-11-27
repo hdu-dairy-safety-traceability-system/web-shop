@@ -1,4 +1,4 @@
-import {USER_LOGIN, LOGIN_FAILED,UPDATE_USER_STATE} from '../constants/ActionTypes'
+import {USER_LOGIN, LOGIN_FAILED,LOGIN_SUCCESS} from '../constants/ActionTypes'
 
 export const getAllProducts = () => {
   console.log('getAllProducts')
@@ -6,15 +6,16 @@ export const getAllProducts = () => {
 export function login(payload) {
   return {type: USER_LOGIN, payload}
 }
-export function updateUserState(data) {
+export function loginSuccess(payload) {
   return {
-    type: UPDATE_USER_STATE,
-    payload: data
+    type: LOGIN_SUCCESS,
+    payload
   }
 }
 
-export function loginErr() {
+export function loginFailed(payload) {
   return {
     type: LOGIN_FAILED,
+    payload
   }
 }

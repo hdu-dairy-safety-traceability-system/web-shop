@@ -6,16 +6,15 @@ import {getLoginState} from '../reducers'
 import userLogin from '@/network/user/login'
 
 export function* login(action) {
-  console.log(action)
   try{
     const loginState = yield call(userLogin, action.payload)
-    
+    console.log(loginState.data.log_state)
     if(loginState.data.log_state == 0)
-      yield put(actions.loginErr())
+      yield put(actions.loginFailed({loginState: 'failed'}))
     else
-      yield put(actions.updateUserState(loginState.data))
+      yield put(actions.loginSuccess(loginState.data))
   } catch(err) {
-    yield put(actions.loginErr(err))
+    yield put(actions.loginFailed({loginState: 'failed'}))
   }
 }
 

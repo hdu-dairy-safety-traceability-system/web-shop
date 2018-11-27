@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Button, List, NavBar, Icon,InputItem} from 'antd-mobile'
+import {Button, List, Toast, NavBar, Icon,InputItem} from 'antd-mobile'
 import withStyles from 'react-jss'
 import {connect} from 'react-redux'
 
-import {login} from '@/redux/actions'
+import {login, loginSuccess} from '@/redux/actions'
 import styles from '@/jss/components/login'
 
-@connect( store => ({loginSate: store.login}), {login})
+
+@connect( store => ({state: store.login}), {login,loginSuccess})
 @withStyles(styles)
 export default class Login extends Component {
   static propTypes = {
@@ -16,17 +17,33 @@ export default class Login extends Component {
     username: 'test',
     password: '123456'
   }
+
+  UNSAFE_componentWillReceiveProps() {
+    this.toast(this.props.state.loginState)
+  }
+
   handleChange = (term) => {
     this.setState(term)
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.props.loginSate, this.props.login(this.state))
-    // login(this.state)
+    const state = this.props.login(this.state)
+    console.log(state)
+  }
+  toast(type) {
+    switch(type) {
+    case 'failed': 
+      Toast.fail('用户名或密码错误')
+      break
+    case 'success': 
+      Toast.info('登陆成功！')
+      break
+    }
   }
   render() {
-    const {classes, loginSate} = this.props
+    const {classes, state} = this.props
     const {username, password} = this.state
+
     return (
       <div>
         <NavBar
@@ -52,6 +69,7 @@ export default class Login extends Component {
           />
         </List>
         <Button onClick={this.handleSubmit} type="warning" className={classes.button}>登陆</Button>
+        
       </div>
     )
   }

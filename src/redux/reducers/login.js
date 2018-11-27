@@ -1,15 +1,29 @@
 import {
-  UPDATE_USER_STATE,
-  USER_LOGIN
+  LOGIN_SUCCESS,
+  LOGIN_FAILED
 } from '../constants/ActionTypes'
 const initialState = {
-  loginState: false,
-  username: ''
+  loginState: 'unlogin', // one of unlogin/success/failed
+  userId: '',
+  logined: false
 }
 export default ( state = initialState, action) => {
   switch(action.type) {
-  case UPDATE_USER_STATE:
-    return {...state, tmp: 11}
+  case LOGIN_SUCCESS:
+    console.log(action)
+    return {
+      ...state,
+      userId: action.payload.user_id,
+      logined: true,
+      loginState: 'success',
+    }
+  case LOGIN_FAILED:
+    return {
+      ...state,
+      ...action.payload,
+      logined: false,
+      loginState: 'failed'
+    }
   default: 
     return state
   }
