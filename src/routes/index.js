@@ -2,7 +2,7 @@ import Home from '@/pages/Home'
 import Profile from '@/pages/Profile'
 import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
-import Gifts from '@/pages/Gifts'
+import Presents from '@/pages/Presents'
 import NoMatch from '@/pages/Error/NoMatch'
 export default [
   {
@@ -23,8 +23,8 @@ export default [
     component: Login
   }, {
     exact: true,
-    path: '/gifts',
-    component: Gifts
+    path: '/presents',
+    component: Presents
   }, {
     component: NoMatch,
   }

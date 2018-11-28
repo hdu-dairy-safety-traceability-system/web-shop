@@ -4,7 +4,7 @@ import {NavBar} from 'antd-mobile'
 
 import ShopHeader from './components/Header'
 import TenGrids from './components/TenGrids'
-import GiftsPartition from '@/components/Gifts/Partition'
+import PresentPartition from '@/components/Present/Partition'
 import Section from '@/components/Layout/Section'
 import Main from '@/components/Layout/Main'
 import Menu from '@/components/Menu'
@@ -31,7 +31,7 @@ export default class Home extends Component {
             <TenGrids />
           </Section>
           <Section>
-            <GiftsPartition label="热门推荐" />
+            <PresentPartition label="热门推荐" />
           </Section>
           <Footer>
             我也是有底线的

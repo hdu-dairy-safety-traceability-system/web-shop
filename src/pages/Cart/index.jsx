@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import GiftsFilter from '@/components/Gifts/Filter'
+import PresentFilter from '@/components/Present/Filter'
 import ButtomBar from '@/components/BottomBar'
 
 export default class Cart extends Component {
@@ -11,7 +11,7 @@ export default class Cart extends Component {
   render() {
     return (
       <div>
-        <GiftsFilter />
+        <PresentFilter />
         <ButtomBar />
       </div>
     )
