@@ -1,8 +1,7 @@
 import { take, put, call, fork, select, takeEvery,takeLatest, all } from 'redux-saga/effects'
 
-import {USER_LOGIN,USER_LOGIN_SAGA} from '../constants/ActionTypes'
+import {LOGIN_ACTION} from '../constants/ActionTypes'
 import * as actions from '../actions'
-import {getLoginState} from '../reducers'
 import userLogin from '@/network/user/login'
 
 export function* login(action) {
@@ -18,7 +17,7 @@ export function* login(action) {
 }
 
 export function* watchLogin() {
-  yield takeLatest(USER_LOGIN, login)
+  yield takeLatest(LOGIN_ACTION, login)
 }
 
 export default function* root() {

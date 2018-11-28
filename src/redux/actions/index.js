@@ -1,10 +1,7 @@
-import {USER_LOGIN, LOGIN_FAILED,LOGIN_SUCCESS} from '../constants/ActionTypes'
+import {LOGIN_ACTION, LOGIN_FAILED,LOGIN_SUCCESS} from '../constants/ActionTypes'
 
-export const getAllProducts = () => {
-  console.log('getAllProducts')
-}
 export function login(payload) {
-  return {type: USER_LOGIN, payload}
+  return {type: LOGIN_ACTION, payload}
 }
 export function loginSuccess(payload) {
   return {

@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import cart from './cart'
-import gifts from './gifts'
+import present from './present'
 import login from './login'
 
 export function getLoginState(state) {
@@ -8,6 +8,6 @@ export function getLoginState(state) {
 }
 export default combineReducers({
   cart,
-  gifts,
+  present,
   login,
 })

@@ -1,7 +1,5 @@
 import {
-  ADD_TO_CART,
-  CHECKOUT_REQUEST,
-  CHECKOUT_FAILURE,
+  CART_ADD_PERSENTS,
 } from '../constants/ActionTypes'
 const initialState = {
   addedIds: [],
@@ -9,12 +7,8 @@ const initialState = {
 }
 export default ( state = initialState, action) => {
   switch(action.type) {
-  case ADD_TO_CART :
+  case CART_ADD_PERSENTS:
     return initialState
-  case CHECKOUT_REQUEST:
-    return state
-  case CHECKOUT_FAILURE:
-    return action.cart
   default: return {}
   }
 }
