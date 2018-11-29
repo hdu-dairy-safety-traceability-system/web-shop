@@ -11,7 +11,6 @@ export default class CategoryNav extends Component {
     }
   }
   hendleChlick = (e)=> {
-    console.log(e)
     this.setState({
       current: e.key,
     })

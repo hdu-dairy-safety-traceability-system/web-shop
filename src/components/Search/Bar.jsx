@@ -100,7 +100,7 @@ export default class SearchBar extends Component {
           {searchRes.map((res, idx) => {
             return (
               <li key={idx}>
-                <a href={`/prodocts/${res.id}`}>
+                <a href={`/presents/${res.id}`}>
                   <span className="title">{res.title}</span>
                   <span className="description">{res.description}</span>
                 </a>
