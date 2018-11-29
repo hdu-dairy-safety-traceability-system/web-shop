@@ -47,6 +47,7 @@
     "react-redux": "^5.1.1",
     "react-responsive-carousel": "^3.1.41",
     "react-router-dom": "^4.3.1",
+    "react-svg": "^7.2.0",
     "redux": "^4.0.1",
     "redux-saga": "^0.16.2",
     "resolve": "1.6.0",
@@ -118,5 +119,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "react-svg-icons": {
+    "assetPath": "src/assets/icons"
   }
 }

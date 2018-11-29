@@ -698,7 +698,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5":
   version "7.1.5"
   resolved "http://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.1.5.tgz#4170907641cf1f61508f563ece3725150cc6fe39"
   integrity sha1-QXCQdkHPH2FQj1Y+zjclFQzG/jk=
@@ -737,6 +737,11 @@
     esutils "^2.0.2"
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
+
+"@tanem/svg-injector@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/@tanem/svg-injector/-/svg-injector-2.1.1.tgz#e9bc12d87d2d1adfcaa46c17c9f481c563ee9d88"
+  integrity sha512-wuiBXgwu3aOdnOgNVM/4L/6nh3z/DGJCFuXgPv/iiDWQk0wgLsp/Olnmxn+iHr90Js/9JAhQZuaHTf5/1nrqOw==
 
 abab@^1.0.3:
   version "1.0.4"
@@ -7235,6 +7240,15 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
+
+react-svg@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/react-svg/-/react-svg-7.2.0.tgz#4203444365590583e16b99907c116061b1acd68c"
+  integrity sha512-jDA05Zrn5/RVQhKf3y+3FgkNjNF8BcYoad6/pb2Sx508IERg4pIcDzjulW0GDDSAs27qyFzU1R8RMRp7caccjw==
+  dependencies:
+    "@babel/runtime" "^7.1.5"
+    "@tanem/svg-injector" "^2.1.1"
+    prop-types "^15.6.2"
 
 react-tween-state@^0.1.5:
   version "0.1.5"
