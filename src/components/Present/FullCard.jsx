@@ -19,7 +19,6 @@ export default class FullCard extends Component {
 
   render() {
     const {data} = this.props
-    console.log(data)
     return (
       <Flex row="true" style={{ height: '90px', borderBottom: 'solid 1px #d2d2d2' }}>
         <div style={{width: '25%'}}>

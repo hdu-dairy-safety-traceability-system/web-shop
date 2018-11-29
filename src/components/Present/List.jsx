@@ -26,32 +26,15 @@ export default class GiftsList extends Component {
   static defaultProps = {
     full: false
   }
-  constructor(props) {
-    super(props)
-    this.state = {
-      products: [],
-      loading: true,
-    }
-  }
-  componentDidMount() {
-    productReq.then(resp => {
-      const products = resp.data.products
-      this.setState({
-        products,
-        loading: false
-      })
-    })
-  }
+
   render() {
-    const {classes, full} = this.props
-    const {products,loading} = this.state
-    console.log(products)
+    const {classes, full, dataSet} = this.props
     return (
       <div className={full ?  '' : classes.list}>
-        {products.map(
+        {dataSet.map(
           (product, idx) => ( 
-            full ? (<FullCard key={idx} data={product} loading={loading} />)
-              : (<HalfCard key={ idx } data={ product } loading={ loading } />) 
+            full ? (<FullCard key={idx} data={product} />)
+              : (<HalfCard key={ idx } data={product} />)
           )
         )}
       </div>
