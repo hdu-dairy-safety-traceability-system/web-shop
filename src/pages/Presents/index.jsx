@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import PresentList from '@/components/Present/List'
+import PresentView from '@/containers/PresentView'
 export default class Presents extends Component {
   static propTypes = {
   }
@@ -8,7 +8,7 @@ export default class Presents extends Component {
   render() {
     return (
       <div>
-        <PresentList full/>
+        <PresentView full/>
       </div>
     )
   }
