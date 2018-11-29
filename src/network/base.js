@@ -1,8 +1,8 @@
 import axios from 'axios'
 import Qs from 'qs'
-import api from '@/network/api'
+import config from '@/network/config'
 
-const baseURL = api.root 
+const baseURL = config.root 
 
 export default axios.create({
   baseURL: baseURL,
