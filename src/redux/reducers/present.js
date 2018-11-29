@@ -1,9 +1,33 @@
-import { CART_ADD_PRESENTS } from '../constants/ActionTypes'
+import {
+  CART_ADD_PRESENTS,
+  PRESENT_MERGE,
+  PRESENT_REINIT
+} from '../constants/ActionTypes'
 
-export default function(state, action) {
+const ininalState = {
+  list: [],
+  type: 'composite',
+  order: 'desc'
+}
+export default function (state = ininalState, action) {
+  console.log('present reducers', action)
   switch(action.type) {
   case CART_ADD_PRESENTS:
     return state
-  default: return {}
+  case PRESENT_REINIT: 
+    return {
+      ...action.payload,
+      // list: [...action.payload.list], 
+      // new array not refrence
+      // type: action.payload.type
+    }
+  case PRESENT_MERGE:
+    return {
+      ...action.payload,
+      list: [ ...state.list, ...action.payload.list],
+      // type: action.payload.type
+    }
+  default: 
+    return state
   }
 }
