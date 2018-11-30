@@ -8,14 +8,20 @@ const tabs = [
   {title: '销量'},
   {title: '价格'},
 ]
-export default class GiftsFilter extends Component {
+export default class PresentFilter extends Component {
   static propTypes = {
+    children: PropTypes.element,
   }
 
   render() {
     const {children} = this.props
     return (
-      <Tabs tabs={tabs} initialPage={0} tabBarActiveTextColor={jdRed} tabBarUnderlineStyle={{borderColor: jdRed}}>
+      <Tabs 
+        tabs={tabs} 
+        initialPage={0} 
+        tabBarActiveTextColor={jdRed} 
+        tabBarUnderlineStyle={{borderColor: jdRed}}
+      >
         {children}
       </Tabs>
     )

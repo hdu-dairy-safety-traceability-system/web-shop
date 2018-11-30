@@ -32,7 +32,8 @@ const styles = {
 @withStyles(styles)
 export default class TopHeader extends Component {
   static propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    classes: PropTypes.object.isRequired,
   }
 
   constructor(props) {

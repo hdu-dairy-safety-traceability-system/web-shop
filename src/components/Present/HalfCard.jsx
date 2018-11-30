@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
 
 import cardStyles from '@/jss/components/gifts'
@@ -6,6 +7,15 @@ import cardStyles from '@/jss/components/gifts'
 import defaultCover from '@/imgs/gift-default.png'
 @withStyles(cardStyles)
 export default class ProductCard extends Component {
+   static propTypes = {
+     data: PropTypes.shape({
+       cover: PropTypes.string,
+       price:PropTypes.number,
+       description: PropTypes.string,
+       // commentCount: PropTypes.number,
+     }).isRequired,
+   }
+
   static defaultProps = {
     data: {
       cover: defaultCover,

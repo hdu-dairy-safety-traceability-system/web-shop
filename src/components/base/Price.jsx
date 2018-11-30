@@ -9,7 +9,8 @@ export default class Price extends Component {
     value: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.string,
-    ]).isRequired
+    ]).isRequired,
+    classes: PropTypes.object.isRequired,
   }
   static defaultProps = {
     value: 0,

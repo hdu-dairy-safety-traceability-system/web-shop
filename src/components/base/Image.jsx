@@ -7,7 +7,8 @@ import responsiveImg from '@/jss/base/responsiveImg'
 @withStyles({responsiveImg})
 export default class Image extends Component {
   static propTypes = {
-    src: PropTypes.string.isRequired
+    src: PropTypes.string.isRequired,
+    classes: PropTypes.object.isRequired,
   }
 
   render() {

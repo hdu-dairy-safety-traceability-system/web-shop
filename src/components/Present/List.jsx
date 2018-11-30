@@ -18,13 +18,16 @@ const styles = {
   }
 }
 @withStyles(styles)
-export default class GiftsList extends Component {
+export default class PresentList extends Component {
   static propTypes = {
-    full: PropTypes.bool.isRequired
+    classes: PropTypes.object.isRequired,
+    dataSet: PropTypes.arrayOf(PropTypes.object).isRequired,
+    full: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
-    full: false
+    full: false,
+    dataSet: []
   }
 
   render() {

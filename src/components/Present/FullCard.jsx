@@ -15,6 +15,12 @@ const mockData = {
 }
 export default class FullCard extends Component {
   static propTypes = {
+    data: PropTypes.shape({
+      cover: PropTypes.string,
+      price:PropTypes.number,
+      description: PropTypes.string,
+      // commentCount: PropTypes.number,
+    }).isRequired,
   }
 
   render() {

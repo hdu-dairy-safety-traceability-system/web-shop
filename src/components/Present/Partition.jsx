@@ -8,12 +8,12 @@ import splitLine from '@/jss/components/Gifts/Partition'
 @withStyles({ splitLine})
 export default class Partition extends Component {
   static propTypes = {
+    classes: PropTypes.object.isRequired,
+    label: PropTypes.string.isRequired,
   }
-  constructor(props) {
-    super(props) 
-  }
+
   render() {
-    const {label, category,classes} = this.props
+    const {label, classes} = this.props
     console.log(classes)
     return (
       <div >

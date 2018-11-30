@@ -32,6 +32,7 @@ const {Item} = TabBar
 @withStyles(buttomBarStyles)
 export default class BottomBar extends Component {
   static propTypes = {
+    classes: PropTypes.object.isRequired
   }
 
   state = {
