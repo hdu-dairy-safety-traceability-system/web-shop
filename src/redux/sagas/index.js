@@ -38,13 +38,11 @@ export function* getPresent(action) {
       list: resp.data.presents,
       type: action.payload.type
     }
-    
     if (present.type === action.payload.type) {
       // append
       yield put(actions.mergePresents(payload))
     } else {
       // reinit
-      //payload.type // = action.payload.type
       yield put(actions.initPresents(payload))
     }
   }catch(err) {

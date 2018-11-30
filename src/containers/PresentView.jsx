@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {PullToRefresh} from 'antd-mobile'
+import {PullToRefresh, Drawer} from 'antd-mobile'
 import {connect} from 'react-redux'
 
 import PresentList from '@/components/Present/List'
-import PresentFilter from '@/components/Present/Filter'
 import PresentFilterTabs from '@/components/Present/FilterTabs'
 import {refresh} from '@/redux/actions'
   
@@ -25,22 +24,15 @@ export default class PresentView extends Component {
     return (
       <div>
         <PresentFilterTabs onClick={(name, order) => refresh({type: name, order})}/>
+        {/* <Drawer
+          sidebar={<div style={{width: 300,height: '100%',backgroundColor: '#000'}}></div>}
+          position="right"
+          open
+        > */}
         <PullToRefresh direction="up" onRefresh={()=> refresh() }>
           <PresentList full dataSet={presentList}/>
         </PullToRefresh>
-        {/* <PresentFilter>
-          <PullToRefresh direction="up" onRefresh={()=> refresh() }>
-            <PresentList full dataSet={presentList}/>
-          </PullToRefresh>
-        
-          <PullToRefresh direction="up" onRefresh={()=> refresh() }>
-            <PresentList full dataSet={presentList}/>
-          </PullToRefresh>
-
-          <PullToRefresh direction="up" onRefresh={()=> refresh() }>
-            <PresentList full dataSet={presentList}/>
-          </PullToRefresh>
-        </PresentFilter> */}
+        {/* </Drawer> */}
       </div>
     )
   }
