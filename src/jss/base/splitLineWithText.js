@@ -4,6 +4,7 @@ const splitLineWithText = {
   textAlign: 'center',
   margin: '0 auto',
   overflow: 'hidden',
+  boxSizing: 'border-box',
   '&::before,&::after': {
     content: '""',
     position: 'absolute',

@@ -44,11 +44,17 @@
     "react-dom": "^16.5.0",
     "react-icons-kit": "^1.2.0",
     "react-jss": "^8.6.1",
+    "react-redux": "^5.1.1",
     "react-responsive-carousel": "^3.1.41",
     "react-router-dom": "^4.3.1",
+    "react-svg": "^7.2.0",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
+    "styled-components": "^4.1.2",
     "sw-precache-webpack-plugin": "0.11.4",
+    "url-join": "^4.0.0",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.11.3",
@@ -110,10 +116,14 @@
         {
           "legacy": true
         }
-      ]
+      ],
+      "babel-plugin-styled-components"
     ]
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "react-svg-icons": {
+    "assetPath": "src/assets/icons"
   }
 }

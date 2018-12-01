@@ -5,13 +5,13 @@ import { SearchBar as AmSearchBar } from 'antd-mobile'
 
 import IndexSearch from '@/network/search'
 import throttle from '@/utils/throttle'
+import Input from '@/components/base/Input'
 
 const styles = {
   searchInput: {
-    padding: '10px 10px',
     position: 'relative',
-    // height: '70px',
     zIndex: '600',
+    padding: '3px 1em',
   },
   list: {
     position: 'absolute',
@@ -37,11 +37,14 @@ const styles = {
 // @rel https://github.com/tc39/proposal-decorators/issues/69
 @injectSheet(styles)
 export default class SearchBar extends Component {
-  static propTypes = {}
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  }
   constructor(props) {
     super(props)
     this.state = {
-      searchRes: []
+      searchRes: [],
+      keyWd: ''
     }
   }
 
@@ -62,7 +65,7 @@ export default class SearchBar extends Component {
     } else {
       this.setState({ searchRes: [] })
     }
-  };
+  }
   /**
    * 有个问题: 现在触发方法应该取消前一次触发的方法
    *
@@ -71,25 +74,27 @@ export default class SearchBar extends Component {
    */
   throttledSearch = throttle(this.handleSearch, 500);
 
-  handleChange = (text )=> {
+  handleChange = (text)=> {
+    this.setState({ keyWd: text })
     this.throttledSearch(text)
-  };
+  }
 
   render() {
     const { classes } = this.props
-    const { searchRes } = this.state
+    const { searchRes,keyWd } = this.state
     return (
       <div className={classes.searchInput}>
-        <AmSearchBar 
-          onSubmit={this.handleChange} 
-          onChange={this.handleChange} 
+        <Input 
+          onChange={this.handleChange}
+          onBlur={() => this.setState({searchRes: [], keyWd: ''})}
+          value={keyWd}
           placeholder="Search" 
         />
         <ul className={classes.list}>
           {searchRes.map((res, idx) => {
             return (
               <li key={idx}>
-                <a href={`/prodocts/${res.id}`}>
+                <a href={`/presents/${res.id}`}>
                   <span className="title">{res.title}</span>
                   <span className="description">{res.description}</span>
                 </a>

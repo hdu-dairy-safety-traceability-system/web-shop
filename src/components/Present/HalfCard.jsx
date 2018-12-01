@@ -1,0 +1,48 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import withStyles from 'react-jss'
+
+import cardStyles from '@/jss/components/gifts'
+import Price from '@/components/base/Price'
+
+import defaultCover from '@/imgs/gift-default.png'
+@withStyles(cardStyles)
+export default class PresentCard extends Component {
+   static propTypes = {
+     data: PropTypes.shape({
+       cover: PropTypes.string,
+       price:PropTypes.number,
+       description: PropTypes.string,
+       id: PropTypes.oneOfType([
+         PropTypes.number,
+         PropTypes.string
+       ]).isRequired,
+     }).isRequired,
+     classes: PropTypes.object.isRequired,
+   }
+
+  static defaultProps = {
+    data: {
+      cover: defaultCover,
+      title: 'No Name',
+      description: 'no description'
+    }
+  }
+
+  handleClick(e) {
+    console.log(e)
+  }
+
+  render() {
+    const { data, classes } = this.props
+    return (
+      <div className={classes.cardContianer}>
+        <a href={`/presents/${data.id}`}>
+          <img className={classes.responsiveImg} src={data.cover} />
+          <p>{data.description}</p>
+          <Price>{data.price}</Price>
+        </a>
+      </div>
+    )
+  }
+}
