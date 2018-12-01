@@ -19,8 +19,8 @@ export default class PresentView extends Component {
     this.props.refresh()
   }
   render() {
-    const {refresh,presentList} = this.props
-    
+    const {refresh,presentList,category} = this.props
+    console.log(this.props)
     return (
       <div>
         <PresentFilterTabs onClick={(name, order) => refresh({type: name, order})}/>

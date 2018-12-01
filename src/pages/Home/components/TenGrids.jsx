@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Grid } from 'antd-mobile'
+import {Link} from 'react-router-dom'
 
 import gridsData from './grids'
 import {Icon} from 'react-icons-kit'
@@ -21,20 +22,15 @@ export default class TenGrids extends Component {
         square
         renderItem={item => {
           return (
-            <div style={{ padding: '12.5px' }}>
-              <div style={{margin: '7px'}}><Icon icon={item.icon} /></div>
-              <span>{item.name}</span>
-            </div>
+            <Link to={`/presents?category=${item.category}`}>
+              <div style={{ padding: '12.5px' }}>
+                <div style={{margin: '7px'}}><Icon icon={item.icon} /></div>
+                <span>{item.name}</span>
+              </div>
+            </Link>
           )
         }}
       />
     )
   }
 }
-
-{/* <div style={{ padding: '12.5px' }}>
-  <img src={dataItem.icon} style={{ width: '75px', height: '75px' }} alt="" />
-  <div style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
-    <span>I am title..</span>
-  </div>
-</div> */}

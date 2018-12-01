@@ -10,7 +10,6 @@ const ininalState = {
   order: 'desc'
 }
 export default function (state = ininalState, action) {
-  console.log('present reducers', action)
   switch(action.type) {
   case CART_ADD_PRESENTS:
     return state

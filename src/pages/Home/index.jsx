@@ -25,7 +25,7 @@ export default class Home extends Component {
             {/* <NavBar mode="light"> */}
             <SearchBar />
             {/* </NavBar> */}
-            {/* <ShopHeader /> */}
+            <ShopHeader />
           </Section>
           <Section className="nav">
             <TenGrids />
