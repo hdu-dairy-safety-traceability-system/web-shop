@@ -1,24 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import withStyles from 'react-jss'
-import price from '@/jss/base/price'
+import styled from 'styled-components'
 
-@withStyles({price})
-export default class Price extends Component {
-  static propTypes = {
-    value: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ]).isRequired,
-    classes: PropTypes.object.isRequired,
+const PriceWrapper = styled.p`
+  color: #f8513b;
+  font-size: 1.3em;
+  font-weight: 700;
+
+  &:before {
+    content: "¥";
+    margin-right: 3px;
   }
-  static defaultProps = {
-    value: 0,
-  }
-  render() {
-    const {classes, value} = this.props
-    return (
-      <p className={classes.price}>{value}</p>
-    )
-  }
+`
+
+function Price(props) {
+  const {children} = props
+
+  return (
+    <PriceWrapper>{parseFloat(children).toFixed(2)}</PriceWrapper>
+  )
 }
+Price.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
+}
+Price.defaultProps = {
+  children: 0
+}
+export default Price

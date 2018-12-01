@@ -33,12 +33,21 @@ export function* getPresent(action) {
       } = present
       action.payload = {type,order}
     }
+    
+    // get category from query param
+    let category = new URLSearchParams(location.search).get('category')
+    if(category !== undefined) {
+      action.payload.category = category
+    }
+    
     const resp = yield call(refresh, action.payload)
     const payload = {
       list: resp.data.presents,
       type: action.payload.type
     }
-    if (present.type === action.payload.type) {
+    
+    if (present.type === action.payload.type
+      && present.order === action.payload.order) {
       // append
       yield put(actions.mergePresents(payload))
     } else {

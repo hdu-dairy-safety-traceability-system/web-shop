@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {Flex,WhiteSpace} from 'antd-mobile'
+import styled from 'styled-components'
 
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
@@ -13,7 +14,7 @@ const mockData = {
   price: 623,
   title: '划装成南型',
 }
-export default class FullCard extends Component {
+class FullCard extends Component {
   static propTypes = {
     data: PropTypes.shape({
       cover: PropTypes.string,
@@ -24,16 +25,17 @@ export default class FullCard extends Component {
   }
 
   render() {
-    const {data} = this.props
+    const {data,className} = this.props
     return (
-      <Flex row="true" style={{ height: '90px', borderBottom: 'solid 1px #d2d2d2' }}>
-        <div style={{width: '25%'}}>
+      <Flex row="true" className={className}>
+        <div>
           <Image  src={data.cover}/>
         </div>
-        <div style={{padding: '10px',height: '100%', boxSizing: 'border-box'}}>
+        <div>
           <h4 style={{margin: 0}}>{data.description}</h4>
+          {/* TODO may display the tags */}
           <WhiteSpace />
-          <Price  value={data.price}/>
+          <Price>{data.price}</Price>
           <WhiteSpace />
           <span>{parseInt(Math.random() * 10000)} 评论</span>
         </div>
@@ -41,3 +43,26 @@ export default class FullCard extends Component {
     )
   }
 }
+const styledFullCard = styled(FullCard)`
+  height: 90px;
+  margin: 5px 0 2px 0;
+  align-items: flex-end;
+  & > :first-child {
+    width: 25%;
+  }
+  & > :last-child {
+    padding: 10px;
+    height: 100%;
+    width: 75%;
+    box-sizing: border-box;
+    padding: 0 10px 10px 10px;
+    border-bottom: solid 1px #d2d2d2;
+  }
+  & p {
+    margin: 0;
+  }
+  & span {
+    font-size: 0.7em;
+  }
+`
+export default styledFullCard
