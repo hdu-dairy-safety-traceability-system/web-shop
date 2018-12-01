@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import {WingBlank, WhiteSpace} from 'antd-mobile'
 
-import Image from '@/components/base/Image'
+import CartBar from '@/components/Bottom/CartBar'
 import PresentInfo from '@/components/Present/Info'
-import CommentList from '@/components/Comment/List'
+import ViewWithBar from '@/layouts/ViewWithBar'
+
 import {getPresentById} from '@/network/presents'
 
-const GraySpace = styled.div`
-  background-color: #f5f5f5;
-  height: 2em;
-`
+
 export default class PresentDetail extends Component {
   static propTypes = {
+    info: PropTypes.object.isRequired,
   }
     state = {
       info: {
@@ -25,12 +22,13 @@ export default class PresentDetail extends Component {
       this.setState({info: resp.data})
     }
     render() {
-      const {info: {comments, ...present}} = this.state
+      const {info} = this.state
       return (
         <div>
-          <PresentInfo info={present}/>
-          <GraySpace />
-          <CommentList dataSet={comments}/>
+          <ViewWithBar
+            component={<PresentInfo info={info}/>}
+            bar={<CartBar/>}          
+          />
         </div>
       )
     }

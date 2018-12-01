@@ -6,6 +6,7 @@ import urljoin from 'url-join'
 import presentRoute from '@/routes/presents'
 export default class Presents extends Component {
   static propTypes = {
+    match: PropTypes.object.isRequired,
   }
 
   render() {
