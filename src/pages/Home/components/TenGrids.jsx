@@ -10,6 +10,11 @@ export default class TenGrids extends Component {
     gridSet: gridsData
   }
   static propTypes = {
+    gridSet: PropTypes.shape({
+      icon: PropTypes.node,
+      name: PropTypes.string,
+      category: PropTypes.string,
+    }).isRequired,
   }
 
   render() {

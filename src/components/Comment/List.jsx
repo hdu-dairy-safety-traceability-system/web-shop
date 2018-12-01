@@ -6,10 +6,8 @@ import Image from '@/components/base/Image'
 import Stars from './Stars'
 
 const Item = styled.div`
-  // height: 4em;
   padding: 10px;
   border-bottom: 1px solid #dcdcdc;
-  // header
   & div,
   & span {
     display: flex;

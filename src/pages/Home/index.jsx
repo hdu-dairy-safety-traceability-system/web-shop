@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {NavBar} from 'antd-mobile'
-// import { Layout } from 'antd'
 
 import ShopHeader from './components/Header'
 import TenGrids from './components/TenGrids'
@@ -9,7 +8,6 @@ import SearchBar from '@/components/Search/Bar'
 import Footer from '@/components/Footer'
 import ViewWithBar from '@/layouts/ViewWithBar'
 import MainBar from '@/components/Bottom/MainBar'
-// const { Header, Content, Footer } = Layout
 
 export default class Home extends Component {
   render() {

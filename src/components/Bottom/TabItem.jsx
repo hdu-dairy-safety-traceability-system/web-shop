@@ -11,7 +11,7 @@ class TabItem extends Component {
     activeIcon: PropTypes.element.isRequired,
     className: PropTypes.string.isRequired,
     defaultIcon: PropTypes.element.isRequired,
-    path: PropTypes.bool.isRequired,
+    path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }
 
@@ -31,7 +31,6 @@ class TabItem extends Component {
 }
 
 const StyledTabItem = styled(TabItem)`
-  // style code here
   display: flex;
   align-items: center;
   flex-direction: column;

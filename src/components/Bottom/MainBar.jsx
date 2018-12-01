@@ -7,7 +7,6 @@ import Icon from 'react-icons-kit'
 import { cart } from 'react-icons-kit/icomoon/cart'
 import { home } from 'react-icons-kit/icomoon/home'
 import { user } from 'react-icons-kit/icomoon/user'
-import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import TabItem from './TabItem'
@@ -40,17 +39,9 @@ class MainBar extends Component {
     className: PropTypes.string.isRequired,
   }
 
-  state = {
-    selectedTab: 0
-  }
-
-  handlePress = (selectedTab) => {
-    this.setState({selectedTab})
-  }
   render() {
     const {classes,className} = this.props
 
-    const {selectedTab} = this.state
     return (
       <Flex className={className} justify="around">
         {
@@ -60,7 +51,6 @@ class MainBar extends Component {
               key={idx}
               path={to}
               defaultIcon={<Icon icon={icon} className={classes.defaultIcon} />}
-              // icon={ <Icon icon={icon} className={classes.defaultIcon} /> }
               activeIcon={<Icon icon={icon} className={classes.selectedIcon}/>}
             />
           ))
@@ -71,7 +61,6 @@ class MainBar extends Component {
 }
 
 const StyledMainBar = styled(MainBar)`
-  // style code here
   width: 100%;
   height: 50px;
 `

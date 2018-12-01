@@ -7,9 +7,9 @@ import ViewWithBar from '@/layouts/ViewWithBar'
 
 import {getPresentById} from '@/network/presents'
 
-
 export default class PresentDetail extends Component {
   static propTypes = {
+    id: PropTypes.number.isRequired,
     info: PropTypes.object.isRequired,
   }
     state = {

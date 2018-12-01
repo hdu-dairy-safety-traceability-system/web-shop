@@ -13,14 +13,14 @@ import {refresh} from '@/redux/actions'
 export default class PresentView extends Component {
   static propTypes = {
     presentList: PropTypes.array.isRequired,
-    refresh: PropTypes.func.isRequired
+    refresh: PropTypes.func.isRequired,
+    category: PropTypes.string.isRequired
   }
   componentDidMount() {
     this.props.refresh()
   }
   render() {
     const {refresh,presentList,category} = this.props
-    console.log(this.props)
     return (
       <div>
         <PresentFilterTabs onClick={(name, order) => refresh({type: name, order})}/>
