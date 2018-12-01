@@ -6,7 +6,6 @@ const PriceWrapper = styled.p`
   color: #f8513b;
   font-size: 1.3em;
   font-weight: 700;
-  // margin: 0 0;
 
   &:before {
     content: "¥";
@@ -18,7 +17,7 @@ function Price(props) {
   const {children} = props
 
   return (
-    <PriceWrapper>{children}</PriceWrapper>
+    <PriceWrapper>{parseFloat(children).toFixed(2)}</PriceWrapper>
   )
 }
 Price.propTypes = {
