@@ -7,14 +7,16 @@ import Price from '@/components/base/Price'
 
 import defaultCover from '@/imgs/gift-default.png'
 @withStyles(cardStyles)
-export default class ProductCard extends Component {
+export default class PresentCard extends Component {
    static propTypes = {
      data: PropTypes.shape({
        cover: PropTypes.string,
        price:PropTypes.number,
        description: PropTypes.string,
-       id: PropTypes.number.isRequired,
-       // commentCount: PropTypes.number,
+       id: PropTypes.oneOfType([
+         PropTypes.number,
+         PropTypes.string
+       ]).isRequired,
      }).isRequired,
      classes: PropTypes.object.isRequired,
    }
@@ -27,17 +29,11 @@ export default class ProductCard extends Component {
     }
   }
 
-  constructor(props) {
-    super(props)
-    this.stete = {}
-  }
-
   handleClick(e) {
     console.log(e)
   }
 
   render() {
-    // console.log(this.props.data.cover)
     const { data, classes } = this.props
     return (
       <div className={classes.cardContianer}>
