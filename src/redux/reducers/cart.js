@@ -2,8 +2,12 @@ import {
   CART_ADD_PRESENTS,
 } from '../constants/ActionTypes'
 const initialState = {
-  addedIds: [],
-  quantityById: {}
+  cart: [
+    // {
+    //   id: 0,
+    //   count: 0,
+    // }
+  ],
 }
 export default ( state = initialState, action) => {
   switch(action.type) {

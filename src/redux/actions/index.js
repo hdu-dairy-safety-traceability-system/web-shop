@@ -5,6 +5,7 @@ import {
   PRESENT_MERGE,
   PRESENT_REFRESH,
   PRESENT_REINIT,
+  CART_PRESENTS_CHANGE,
 } from '../constants/ActionTypes'
 
 export function login(payload) {
@@ -25,7 +26,6 @@ export function loginFailed(payload) {
 }
 
 export function mergePresents(payload) {
-  console.log(payload)
   return {
     type: PRESENT_MERGE,
     payload
@@ -39,9 +39,15 @@ export function refresh(payload) {
   }
 }
 export function initPresents(payload) {
-  console.log(payload)
   return {
     type: PRESENT_REINIT,
     payload
+  }
+}
+
+export function updateCartItemState(payload) {
+  return {
+    type: CART_PRESENTS_CHANGE,
+    payload,
   }
 }
