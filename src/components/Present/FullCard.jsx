@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Flex,WhiteSpace} from 'antd-mobile'
+import {Flex,WhiteSpace,Stepper} from 'antd-mobile'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
-const {Item} = Flex
+import Title from '@/components/base/Title'
 
 const mockData = {
   cover: 'http://dummyimage.com/400x400',
@@ -16,6 +16,7 @@ const mockData = {
 }
 class FullCard extends Component {
   static propTypes = {
+    className: PropTypes.string.isRequired,
     data: PropTypes.shape({
       cover: PropTypes.string,
       price:PropTypes.number,
@@ -24,23 +25,51 @@ class FullCard extends Component {
     }).isRequired,
   }
 
-  render() {
+  state = {
+    count: 1
+  }
+  
+  handleChange = (count) => {
+    this.setState({count})
+  }
+  
+  renderCard() {
     const {data,className} = this.props
+    const {count} = this.state
     return (
-      <Link to={`/present/${data.id}`}>
-        <Flex row="true" className={className}>
-          <div>
-            <Image  src={data.cover}/>
-          </div>
-          <div>
-            <h4 style={{margin: 0}}>{data.description}</h4>
-            {/* TODO may display the tags */}
-            <WhiteSpace />
+      <Flex row="true" className={className}>
+        <div>
+          <Image  src={data.cover}/>
+        </div>
+        <div>
+          <Title>{`${data.title}-${data.description}`}</Title>
+          {/* TODO may display the tags */}
+          <Flex justify="between">
             <Price>{data.price}</Price>
-            <WhiteSpace />
-            <span>{parseInt(Math.random() * 10000)} 评论</span>
-          </div>
-        </Flex>
+            {/* TODO max limit could come from config */}
+            {data.count && <Stepper 
+              defaultValue={data.count}
+              max={20}
+              min={1}
+              value={count}
+              onChange={this.handleChange}
+              showNumber
+            />}
+          </Flex>
+          <span>{data.commentCount} 评论</span>
+        </div>
+      </Flex>
+    )
+  }
+  render() {
+    const {data} = this.props
+    // data.count = 1
+    if(data.count) {
+      return this.renderCard()
+    }
+    return (
+      <Link to={`/presents/${data.id}`}>
+        {this.renderCard()}
       </Link>
     )
   }
