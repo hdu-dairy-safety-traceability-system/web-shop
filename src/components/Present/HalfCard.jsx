@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
-
+import {Link} from 'react-router-dom'
 import cardStyles from '@/jss/components/gifts'
 import Price from '@/components/base/Price'
 
@@ -37,11 +37,11 @@ export default class PresentCard extends Component {
     const { data, classes } = this.props
     return (
       <div className={classes.cardContianer}>
-        <a href={`/presents/${data.id}`}>
+        <Link to={`/presents/${data.id}`}>
           <img className={classes.responsiveImg} src={data.cover} />
           <p>{data.description}</p>
           <Price>{data.price}</Price>
-        </a>
+        </Link>
       </div>
     )
   }

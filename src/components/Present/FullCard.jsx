@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {Flex,WhiteSpace} from 'antd-mobile'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
 const {Item} = Flex
@@ -27,19 +27,21 @@ class FullCard extends Component {
   render() {
     const {data,className} = this.props
     return (
-      <Flex row="true" className={className}>
-        <div>
-          <Image  src={data.cover}/>
-        </div>
-        <div>
-          <h4 style={{margin: 0}}>{data.description}</h4>
-          {/* TODO may display the tags */}
-          <WhiteSpace />
-          <Price>{data.price}</Price>
-          <WhiteSpace />
-          <span>{parseInt(Math.random() * 10000)} 评论</span>
-        </div>
-      </Flex>
+      <Link to={`/present/${data.id}`}>
+        <Flex row="true" className={className}>
+          <div>
+            <Image  src={data.cover}/>
+          </div>
+          <div>
+            <h4 style={{margin: 0}}>{data.description}</h4>
+            {/* TODO may display the tags */}
+            <WhiteSpace />
+            <Price>{data.price}</Price>
+            <WhiteSpace />
+            <span>{parseInt(Math.random() * 10000)} 评论</span>
+          </div>
+        </Flex>
+      </Link>
     )
   }
 }

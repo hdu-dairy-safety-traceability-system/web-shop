@@ -1,5 +1,5 @@
 import {ic_phonelink} from 'react-icons-kit/md/ic_phonelink'
-import { glass} from 'react-icons-kit/icomoon/glass'
+import {glass} from 'react-icons-kit/icomoon/glass'
 import {coffee} from 'react-icons-kit/fa/coffee'
 import {woman} from 'react-icons-kit/icomoon/woman'
 import {ic_texture} from 'react-icons-kit/md/ic_texture'
