@@ -6,6 +6,7 @@ import {
   PRESENT_REFRESH,
   PRESENT_REINIT,
   CART_PRESENTS_CHANGE,
+  CART_ADD_PRESENTS,
 } from '../constants/ActionTypes'
 
 export function login(payload) {
@@ -49,5 +50,12 @@ export function updateCartItemState(payload) {
   return {
     type: CART_PRESENTS_CHANGE,
     payload,
+  }
+}
+
+export function addToCart(payload) {
+  return {
+    type: CART_ADD_PRESENTS,
+    payload
   }
 }

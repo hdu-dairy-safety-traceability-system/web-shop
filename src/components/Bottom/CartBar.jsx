@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import TabItem from './TabItem'
 import { ic_shopping_cart } from 'react-icons-kit/md/ic_shopping_cart'
 import kefu from '@/assets/icons/kefu3.svg'
+import {connect} from 'react-redux'
+import {addToCart} from '@/redux/actions'
 
 const TabBarWrapper = styled.div`
   display: flex;
@@ -34,6 +36,8 @@ const TabBarWrapper = styled.div`
     background: linear-gradient(to right,#FF961E,#F52800);
   }
 `
+
+@connect(null, {addToCart})
 export default class CartBar extends Component {
   static propTypes = {
     prop: PropTypes
