@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import {Icon} from 'react-icons-kit'
+import ReactSVG from 'react-svg'
 import styled from 'styled-components'
+import TabItem from './TabItem'
+import { ic_shopping_cart } from 'react-icons-kit/md/ic_shopping_cart'
+import kefu from '@/assets/icons/kefu3.svg'
 
 const TabBarWrapper = styled.div`
   display: flex;
@@ -9,6 +14,9 @@ const TabBarWrapper = styled.div`
     justify-content: center;
     line-height: 50px;
     background-color: #fff;
+  }
+  & > a {
+    height: 50px;
   }
   & > :nth-child(1) {
     flex-grow: 1;
@@ -31,16 +39,23 @@ export default class CartBar extends Component {
     prop: PropTypes
   }
 
+  addToCart(e) {
+    console.log(e)
+  }
   render() {
     return (
       <TabBarWrapper>
-        <div>
-          客服
-        </div>
-        <div>
-          购物车
-        </div>
-        <div>
+        <TabItem
+          title="客服"
+          path="/kefu"
+          defaultIcon={<ReactSVG svgStyle={{ height: '1em', width: '1em' }} src={kefu}/>}
+        />
+        <TabItem 
+          title="购物车"
+          path="/cart"
+          defaultIcon={<Icon icon={ic_shopping_cart}/>}
+        />
+        <div onClick={this.addToCart}>
           加入购物车
         </div>
       </TabBarWrapper>

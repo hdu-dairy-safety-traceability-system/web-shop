@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
 import Title from '@/components/base/Title'
+import InputNumber from '@/components/base/InputNumber'
 
 const mockData = {
   cover: 'http://dummyimage.com/400x400',
@@ -47,13 +48,11 @@ class FullCard extends Component {
           <Flex justify="between">
             <Price>{data.price}</Price>
             {/* TODO max limit could come from config */}
-            {data.count && <Stepper 
-              defaultValue={data.count}
+            {data.count && <InputNumber
               max={20}
               min={1}
               value={count}
               onChange={this.handleChange}
-              showNumber
             />}
           </Flex>
           <span>{data.commentCount} 评论</span>
