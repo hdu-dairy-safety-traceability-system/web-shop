@@ -16,7 +16,7 @@ export default class CategoryNav extends Component {
     })
   }
   render() {
-    const current = this.state.current
+    // const current = this.state.current
     return (
       <div></div>
     )

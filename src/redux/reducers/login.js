@@ -10,7 +10,6 @@ const initialState = {
 export default ( state = initialState, action) => {
   switch(action.type) {
   case LOGIN_SUCCESS:
-    console.log(action)
     return {
       ...state,
       userId: action.payload.user_id,

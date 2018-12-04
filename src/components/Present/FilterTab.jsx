@@ -17,8 +17,9 @@ export default class Tab extends Component {
   static defaultProps = {
     active: false
   }
+
   state = {
-    activeIconIndex: 1
+    activeIconIndex: 1 // enum 0/1
   }
   
   renderIcon() {

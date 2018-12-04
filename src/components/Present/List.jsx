@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
+import {Link} from 'react-router-dom'
 
 import HalfCard from './HalfCard'
 import FullCard from './FullCard'
@@ -18,13 +19,16 @@ const styles = {
   }
 }
 @withStyles(styles)
-export default class GiftsList extends Component {
+export default class PresentList extends Component {
   static propTypes = {
-    full: PropTypes.bool.isRequired
+    classes: PropTypes.object.isRequired,
+    dataSet: PropTypes.arrayOf(PropTypes.object).isRequired,
+    full: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
-    full: false
+    full: false,
+    dataSet: []
   }
 
   render() {
@@ -32,9 +36,9 @@ export default class GiftsList extends Component {
     return (
       <div className={full ?  '' : classes.list}>
         {dataSet.map(
-          (product, idx) => ( 
+          (product, idx) => (
             full ? (<FullCard key={idx} data={product} />)
-              : (<HalfCard key={ idx } data={product} />)
+              : (<HalfCard key={idx} data={product} />)
           )
         )}
       </div>

@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Flex,WhiteSpace} from 'antd-mobile'
-
+import {Flex,WhiteSpace,Stepper} from 'antd-mobile'
+import {Link} from 'react-router-dom'
+import styled from 'styled-components'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
-const {Item} = Flex
+import Title from '@/components/base/Title'
+import InputNumber from '@/components/base/InputNumber'
 
 const mockData = {
   cover: 'http://dummyimage.com/400x400',
@@ -13,25 +15,65 @@ const mockData = {
   price: 623,
   title: '划装成南型',
 }
-export default class FullCard extends Component {
+class FullCard extends Component {
   static propTypes = {
+    className: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+      cover: PropTypes.string,
+      price:PropTypes.number,
+      description: PropTypes.string,
+      // commentCount: PropTypes.number,
+    }).isRequired,
+  }
+
+  renderCard() {
+    const {data,className} = this.props
+    return (
+      <Flex row="true" className={className}>
+        <div>
+          <Image  src={data.cover}/>
+        </div>
+        <div>
+          <Title>{`${data.title}-${data.description}`}</Title>
+          {/* TODO may display the tags */}
+          <Flex justify="between">
+            <Price>{data.price}</Price>
+          </Flex>
+          <span>{data.commentCount} 评论</span>
+        </div>
+      </Flex>
+    )
   }
 
   render() {
     const {data} = this.props
     return (
-      <Flex row="true" style={{ height: '90px', borderBottom: 'solid 1px #d2d2d2' }}>
-        <div style={{width: '25%'}}>
-          <Image  src={data.cover}/>
-        </div>
-        <div style={{padding: '10px',height: '100%', boxSizing: 'border-box'}}>
-          <h4 style={{margin: 0}}>{data.description}</h4>
-          <WhiteSpace />
-          <Price  value={data.price}/>
-          <WhiteSpace />
-          <span>{parseInt(Math.random() * 10000)} 评论</span>
-        </div>
-      </Flex>
+      <Link to={`/presents/${data.id}`}>
+        {this.renderCard()}
+      </Link>
     )
   }
 }
+const styledFullCard = styled(FullCard)`
+  height: 90px;
+  margin: 5px 0 2px 0;
+  align-items: flex-end;
+  & > :first-child {
+    width: 25%;
+  }
+  & > :last-child {
+    padding: 10px;
+    height: 100%;
+    width: 75%;
+    box-sizing: border-box;
+    padding: 0 10px 10px 10px;
+    border-bottom: solid 1px #d2d2d2;
+  }
+  & p {
+    margin: 0;
+  }
+  & span {
+    font-size: 0.7em;
+  }
+`
+export default styledFullCard

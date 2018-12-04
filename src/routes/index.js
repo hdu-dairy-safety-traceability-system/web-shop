@@ -22,7 +22,6 @@ export default [
     path: '/login',
     component: Login
   }, {
-    exact: true,
     path: '/presents',
     component: Presents
   }, {

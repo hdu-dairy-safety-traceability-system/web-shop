@@ -59,6 +59,7 @@ const tabs = [
 export default class FilterTabs extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired,
   }
   
   state = {

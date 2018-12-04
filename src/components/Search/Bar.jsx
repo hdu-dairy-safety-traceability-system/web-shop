@@ -37,7 +37,9 @@ const styles = {
 // @rel https://github.com/tc39/proposal-decorators/issues/69
 @injectSheet(styles)
 export default class SearchBar extends Component {
-  static propTypes = {}
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  }
   constructor(props) {
     super(props)
     this.state = {
@@ -88,14 +90,6 @@ export default class SearchBar extends Component {
           value={keyWd}
           placeholder="Search" 
         />
-        {/* TODO Don't use this component */}
-        {/* <AmSearchBar 
-          onSubmit={this.handleChange}
-          onChange={this.handleChange}
-          onBlur={() => this.setState({searchRes: [], keyWd: ''})}
-          value={keyWd}
-          placeholder="Search" 
-        /> */}
         <ul className={classes.list}>
           {searchRes.map((res, idx) => {
             return (

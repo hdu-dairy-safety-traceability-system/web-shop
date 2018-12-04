@@ -58,7 +58,7 @@ export default class Login extends Component {
               <NavBar
                 mode="light"
                 icon={<Icon type="left" />}
-                onLeftClick={() => console.log('onLeftClick')}
+                onLeftClick={() =>{ /*console.log('onLeftClick') */}}
               >
               密码登陆
               </NavBar>

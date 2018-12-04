@@ -1,19 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import withStyles from 'react-jss'
-
-import responsiveImg from '@/jss/base/responsiveImg'
-
-@withStyles({responsiveImg})
-export default class Image extends Component {
-  static propTypes = {
-    src: PropTypes.string.isRequired
-  }
-
-  render() {
-    const {src, classes} = this.props
-    return (
-      <img src={src} className={classes.responsiveImg}/>
-    )
-  }
-}
+import styled from 'styled-components'
+const Image = styled.img`
+  display: block;
+  height: auto;
+  max-width: 100%;
+`
+export default Image
