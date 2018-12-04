@@ -45,7 +45,6 @@ export default class CartBar extends Component {
 
   addToCart = (e) => {
     const { addToCart, data, cart} = this.props
-    console.log(data)
     addToCart(data)
   }
   render() {

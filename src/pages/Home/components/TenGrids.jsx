@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 
 import gridsData from './grids'
 
-console.log(gridsData)
 import {Icon} from 'react-icons-kit'
 export default class TenGrids extends Component {
   static defaultProps={

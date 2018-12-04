@@ -30,7 +30,7 @@ export default class PresentCard extends Component {
   }
 
   handleClick(e) {
-    console.log(e)
+    // console.log(e)
   }
 
   render() {
