@@ -34,7 +34,7 @@ class Card extends PureComponent {
       id: data.id
     }
     // updateCartItemState()
-    this.setState({ isChecked: payload.selected})
+    this.setState({isChecked: payload.selected})
   }
 
   render() {

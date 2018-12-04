@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import CartCard from './Card'
+import {connect} from 'react-redux'
+
+@connect(store => ({dataSet: store.cart.cart}))
 class List extends PureComponent {
   static propTypes = {
     className: PropTypes.string.isRequired,

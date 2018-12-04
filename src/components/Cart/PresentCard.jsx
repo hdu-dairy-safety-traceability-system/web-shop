@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {Flex} from 'antd-mobile'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+
+import {updateCartItemState} from '@/redux/actions'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
 import Title from '@/components/base/Title'
 import InputNumber from '@/components/base/InputNumber'
+import {getCartById} from '@/redux/actions'
 
+@connect(null,{
+  updateCartItemState,
+})
 class FullCard extends Component {
   static propTypes = {
     className: PropTypes.string.isRequired,
@@ -18,19 +25,29 @@ class FullCard extends Component {
       // commentCount: PropTypes.number,
     }).isRequired,
   }
-
+  getCartCount() {
+    const {data} = this.props
+    return getCartById(data.id).count
+  }
+  
   state = {
-    count: 1
+    count: this.getCartCount()
   }
 
   handleChange = (count) => {
     // request to update cart present count
+    const {data,updateCartItemState} = this.props
+    getCartById(data.id)
     this.setState({ count })
+    updateCartItemState({
+      id: data.id,
+      count
+    })
   }
 
   render() {
     const { data, className } = this.props
-    const { count } = this.state
+    const count = this.getCartCount()
     return (
       <Flex row="true" className={className}>
         <div>

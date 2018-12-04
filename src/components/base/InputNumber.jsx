@@ -21,7 +21,9 @@ class InputNumber extends PureComponent {
     min: 1,
     max: 20,
   }
-
+  state = {
+    value: 0
+  }
   plus(value) {
     const {onChange, max} = this.props
     value = parseInt(value)
@@ -44,7 +46,6 @@ class InputNumber extends PureComponent {
   }
   render() {
     const {className,value, min, max} = this.props
-    console.log(value)
     return (
       <div className={className}>
         <Icon size="18" 
