@@ -1,31 +1,31 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
 import { NavBar, Icon } from 'antd-mobile'
-// import {Icon} from 'react-icons-kit'
-// import {ic_keyboard_arrow_left} from 'react-icons-kit/md/ic_keyboard_arrow_left'
 import styled from 'styled-components'
 import {all} from '@/network/cart'
 import CartList from '@/components/Cart/List'
 
+import { getCart } from '@/redux/actions'
+
+@connect(store => ({list: store.cart.cart}), {getCart})
 class Cart extends PureComponent {
   static propTypes = {
-    className: PropTypes.string.isRequired
+    className: PropTypes.string.isRequired,
+    getCart: PropTypes.func.isRequired,
   }
 
-  state = {
-    list: []
-  }
-  async componentDidMount() {
-    const resp = await all()
-    this.setState({list: resp.data.presents})
-  }
-  
   static defaultProps = {}
+
+  componentDidMount() {
+    const { getCart } = this.props
+    getCart()
+  }
  
   render() {
-    const {className} = this.props
-    const {list} = this.state
+    const {className, list} = this.props
+    // const {list} = this.state
     return (
       <div className={className}>
         <NavBar
