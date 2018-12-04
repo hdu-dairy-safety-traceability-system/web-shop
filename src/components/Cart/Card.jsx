@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 import {Flex} from 'antd-mobile'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import PresentCard from '@/components/Present/FullCard'
 import {updateCartItemState} from '@/redux/actions'
-
+import Image from '@/components/base/Image'
+import Price from '@/components/base/Price'
+import Title from '@/components/base/Title'
+import InputNumber from '@/components/base/InputNumber'
+import PresentCard from './PresentCard'
 import Radio from '@/components/base/Radio'
 
 @connect(null,{
@@ -69,3 +72,4 @@ const StyledCard = styled(Card)`
 `
 
 export default StyledCard
+
