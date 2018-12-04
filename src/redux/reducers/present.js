@@ -1,5 +1,4 @@
 import {
-  CART_ADD_PRESENTS,
   PRESENT_MERGE,
   PRESENT_REINIT
 } from '../constants/ActionTypes'
@@ -11,8 +10,6 @@ const ininalState = {
 }
 export default function (state = ininalState, action) {
   switch(action.type) {
-  case CART_ADD_PRESENTS:
-    return state
   case PRESENT_REINIT: 
     return {
       ...action.payload,

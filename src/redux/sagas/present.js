@@ -1,14 +1,9 @@
-import { take, put, call, fork, select, takeEvery,takeLatest, all } from 'redux-saga/effects'
+import {take, put, call,select} from 'redux-saga/effects'
 
 import * as types from '../constants/ActionTypes'
 import * as actions from '../actions'
-import userLogin from '@/network/user/login'
-import {addToCart as addPresentToCart, mergeCart} from '@/network/cart'
 import {refresh} from '@/network/presents'
 import {selectPresent} from '../reducers'
-
-import watchAddToCart from './cart'
-import watchLogin from './login'
 
 export function* getPresent(action) {
   try{

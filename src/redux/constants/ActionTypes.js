@@ -1,4 +1,6 @@
-export const CART_ADD_PRESENTS = 'CART_ADD_PRESENTS' // request
+export const CART_ADD_PRESENT = 'CART_ADD_PRESENT' // request
+export const CART_MERGE_PRESENT = 'CART_MERGE_PRESENT'
+export const CART_GET_ALL = 'CART_GET_ALL'
 export const CART_PRESENTS_CREATE = 'CART_PRESENTS_UPDATE' // request
 export const CART_PRESENTS_DELETE = 'CART_PRESENTS_DELETE' // request
 export const CART_PRESENTS_CHANGE = 'CART_PRESENTS_CHANGE' // may be create action or delete actions
