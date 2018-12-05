@@ -3,38 +3,34 @@ import PropTypes from 'prop-types'
 import {Flex} from 'antd-mobile'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import {updateCartItemState} from '@/redux/actions'
-import Image from '@/components/base/Image'
-import Price from '@/components/base/Price'
-import Title from '@/components/base/Title'
-import InputNumber from '@/components/base/InputNumber'
+import {updateCartReq} from '@/redux/actions'
 import PresentCard from './PresentCard'
 import Radio from '@/components/base/Radio'
 
 @connect(null,{
-  updateCartItemState,
+  updateCartReq,
 })
 class Card extends PureComponent {
   static propTypes = {
     className: PropTypes.string.isRequired,
     data: PropTypes.object.isRequired,
-    updateCartItemState: PropTypes.func.isRequired,
+    updateCartReq: PropTypes.func.isRequired,
   }
 
   state = {
-    isChecked: false,
+    isChecked: !!this.props.data.selected,
   }
 
   static defaultProps = {}
 
   handleChange = () => {
-    const {updateCartItemState, data} = this.props
+    const {updateCartReq, data} = this.props
     const payload = {
       selected: !this.state.isChecked,
       id: data.id
     }
-    // updateCartItemState()
     this.setState({isChecked: payload.selected})
+    updateCartReq(payload)
   }
 
   render() {

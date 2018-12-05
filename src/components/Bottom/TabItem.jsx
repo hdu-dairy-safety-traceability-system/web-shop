@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-import {Flex} from 'antd-mobile'
 import {Link} from 'react-router-dom'
 
 import styled from 'styled-components'
@@ -18,7 +17,7 @@ class TabItem extends Component {
   static defaultProps = {}
 
   render() {
-    const { active, activeIcon, className, defaultIcon, path, title} = this.props
+    const { activeIcon, className, defaultIcon, path, title} = this.props
     return (
       <Link className={className} to={path}>
         {pathname == path ? activeIcon : defaultIcon}

@@ -1,11 +1,16 @@
 import {
   CART_MERGE_PRESENT,
-  CART_PRESENTS_CHANGE,
+  CART_PRESENT_CHANGE,
+  CART_MAKE_ORDER_SUCC,
 } from '../constants/ActionTypes'
 const initialState = {
   cart: [
     // present objects
   ],
+}
+
+export function getSelectedPresents(store) {
+  return store.cart.cart.filter( present => !!present.selected)
 }
 
 function diff(cart, presents) {
@@ -26,7 +31,8 @@ function changePresent(cart, payload) {
     } else {
       const newCopy = {...cart[presentIndex]}
       ++newCopy.count
-      cart.splice(presentIndex, 1, newCopy) // replace with new Ojbect
+      // replace with new Ojbect
+      cart.splice(presentIndex, 1, newCopy) 
     }
   }
   return cart
@@ -40,18 +46,21 @@ export default ( state = initialState, action) => {
       cart: [...cart],
     }
   }
-  case CART_PRESENTS_CHANGE: {
+  case CART_PRESENT_CHANGE: {
     const {payload} = action
     const {cart} = state
     const presentIndex = cart.findIndex(cartItem => cartItem.id == payload.id)
     if (presentIndex !== -1) {
       const newCopy = { ...cart[presentIndex], ...payload}
-      cart.splice(presentIndex, 1, newCopy) // replace with new Ojbect
+      // replace with new Ojbect
+      cart.splice(presentIndex, 1, newCopy) 
     }
     return {
       cart: [...cart],
     }
   }
+  case CART_MAKE_ORDER_SUCC:
+    return state
   default: 
     return state
   }

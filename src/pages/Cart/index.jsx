@@ -4,16 +4,16 @@ import {connect} from 'react-redux'
 
 import { NavBar, Icon } from 'antd-mobile'
 import styled from 'styled-components'
-import {all} from '@/network/cart'
 import CartList from '@/components/Cart/List'
-
+import ViewWithBar from '@/layouts/ViewWithBar'
 import { getCart } from '@/redux/actions'
-
+import Payment from '@/components/Bottom/Payment'
 @connect(store => ({list: store.cart.cart}), {getCart})
 class Cart extends PureComponent {
   static propTypes = {
     className: PropTypes.string.isRequired,
     getCart: PropTypes.func.isRequired,
+    list: PropTypes.array.isRequired,
   }
 
   static defaultProps = {}
@@ -36,7 +36,12 @@ class Cart extends PureComponent {
         >
           购物车
         </NavBar>
-        <CartList dataSet={list}/>
+        <ViewWithBar 
+          component={<CartList dataSet={list} />}
+          bar={<Payment />}
+        />
+        {/* <CartList dataSet={list}/> */}
+        
       </div>
     )
   }

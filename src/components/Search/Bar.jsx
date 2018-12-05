@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
-import { SearchBar as AmSearchBar } from 'antd-mobile'
 
 import IndexSearch from '@/network/search'
 import throttle from '@/utils/throttle'
@@ -56,6 +55,7 @@ export default class SearchBar extends Component {
           this.setState({ searchRes: res.data.products })
         })
         .catch(err => {
+          console.log(err)
           this.setState({
             seachRes: [
               { id: 0, title: '搜索失败', description: '未找到任何结果' }

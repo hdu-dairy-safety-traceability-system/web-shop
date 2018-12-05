@@ -45,7 +45,7 @@ class MainBar extends Component {
     return (
       <Flex className={className} justify="around">
         {
-          tabs.map(({to,icon, title, key},idx )=> (
+          tabs.map(({to,icon, title},idx )=> (
             <TabItem
               title={title}
               key={idx}

@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
-import {Link} from 'react-router-dom'
 
 import HalfCard from './HalfCard'
 import FullCard from './FullCard'
-import productReq from '@/network/home/product'
 
 const styles = {
   list: {
