@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
-import {Link} from 'react-router-dom'
 
 import HalfCard from './HalfCard'
 import FullCard from './FullCard'
-import productReq from '@/network/home/product'
 
 const styles = {
   list: {
@@ -37,10 +35,8 @@ export default class PresentList extends Component {
       <div className={full ?  '' : classes.list}>
         {dataSet.map(
           (product, idx) => (
-            <Link key={`/presents/${idx}`} to={product.id}>
-              {full ? (<FullCard data={product} />)
-                : (<HalfCard data={product} />)}
-            </Link>
+            full ? (<FullCard key={idx} data={product} />)
+              : (<HalfCard key={idx} data={product} />)
           )
         )}
       </div>

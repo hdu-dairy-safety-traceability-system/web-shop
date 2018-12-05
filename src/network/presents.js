@@ -7,5 +7,5 @@ export function refresh(params) {
 export const recommend = curry(request.get, '/recommend')
 
 export function getPresentById(id) {
-  return  request.get('/present/' + id)
+  return  request.get('/presents/' + id)
 }

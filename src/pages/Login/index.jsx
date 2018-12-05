@@ -5,7 +5,7 @@ import withStyles from 'react-jss'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router'
 
-import {login, loginSuccess} from '@/redux/actions'
+import {login} from '@/redux/actions'
 import styles from '@/jss/components/login'
 
 function toast(type) {
@@ -33,7 +33,7 @@ export default class Login extends Component {
     password: '123456'
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props) {
     toast(props.state.loginState)
     return null
   }
@@ -58,7 +58,7 @@ export default class Login extends Component {
               <NavBar
                 mode="light"
                 icon={<Icon type="left" />}
-                onLeftClick={() => console.log('onLeftClick')}
+                onLeftClick={() =>{ /*console.log('onLeftClick') */}}
               >
               密码登陆
               </NavBar>

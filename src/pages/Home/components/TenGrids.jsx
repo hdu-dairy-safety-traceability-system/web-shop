@@ -4,17 +4,20 @@ import { Grid } from 'antd-mobile'
 import {Link} from 'react-router-dom'
 
 import gridsData from './grids'
+
 import {Icon} from 'react-icons-kit'
 export default class TenGrids extends Component {
   static defaultProps={
     gridSet: gridsData
   }
   static propTypes = {
-    gridSet: PropTypes.shape({
-      icon: PropTypes.node,
-      name: PropTypes.string,
-      category: PropTypes.string,
-    }).isRequired,
+    gridSet: PropTypes.arrayOf(
+      PropTypes.shape({
+        icon: PropTypes.object,
+        name: PropTypes.string,
+        category: PropTypes.string,
+      })
+    ).isRequired,
   }
 
   render() {

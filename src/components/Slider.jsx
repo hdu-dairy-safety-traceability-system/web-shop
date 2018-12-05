@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Carousel, WingBlank } from 'antd-mobile'
+import { Carousel } from 'antd-mobile'
 export default class Slider extends Component {
   static propTypes = {
     imgUrls: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -8,7 +8,7 @@ import splitLine from '@/jss/components/Footer'
 @withStyles({splitLine})
 export default class Footer extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.string.isRequired,
     classes: PropTypes.object.isRequired,
   }
 

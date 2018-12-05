@@ -1,15 +1,14 @@
 import {ic_phonelink} from 'react-icons-kit/md/ic_phonelink'
-import { glass} from 'react-icons-kit/icomoon/glass'
+import {glass} from 'react-icons-kit/icomoon/glass'
 import {coffee} from 'react-icons-kit/fa/coffee'
-import {woman} from 'react-icons-kit/icomoon/woman'
 import {ic_texture} from 'react-icons-kit/md/ic_texture'
 import {ic_hourglass_empty} from 'react-icons-kit/md/ic_hourglass_empty'
-import {box} from 'react-icons-kit/iconic/box'
 import {gift} from 'react-icons-kit/icomoon/gift'
 import {tree} from 'react-icons-kit/fa/tree'
 import {ticket} from 'react-icons-kit/icomoon/ticket'
 import {starFull} from 'react-icons-kit/icomoon/starFull'
 import {ic_trending_down} from 'react-icons-kit/md/ic_trending_down'
+
 export default [{
   icon: ic_phonelink,
   name: '数码',

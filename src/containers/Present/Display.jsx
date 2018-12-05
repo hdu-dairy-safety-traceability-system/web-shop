@@ -23,11 +23,13 @@ export default class PresentDetail extends Component {
     }
     render() {
       const {info} = this.state
+      // FIXME
+      const {comments, ...present} = info
       return (
         <div>
           <ViewWithBar
             component={<PresentInfo info={info}/>}
-            bar={<CartBar/>}          
+            bar={<CartBar data={present}/>}          
           />
         </div>
       )

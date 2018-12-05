@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const PriceWrapper = styled.p`
+  display: inline-block;
   color: #f8513b;
   font-size: 1.3em;
   font-weight: 700;
-
   &:before {
     content: "¥";
     margin-right: 3px;
