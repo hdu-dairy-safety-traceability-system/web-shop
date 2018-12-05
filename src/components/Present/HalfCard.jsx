@@ -29,10 +29,6 @@ export default class PresentCard extends Component {
     }
   }
 
-  handleClick(e) {
-    // console.log(e)
-  }
-
   render() {
     const { data, classes } = this.props
     return (

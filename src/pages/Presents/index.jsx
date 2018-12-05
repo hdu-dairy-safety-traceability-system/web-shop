@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Route, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import urljoin from 'url-join'
 
 import presentRoute from '@/routes/presents'

@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {Flex} from 'antd-mobile'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
-import {updateCartItemState} from '@/redux/actions'
+import {updateCartReq} from '@/redux/actions'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
 import Title from '@/components/base/Title'
@@ -13,7 +12,7 @@ import InputNumber from '@/components/base/InputNumber'
 import {getCartById} from '@/redux/actions'
 
 @connect(null,{
-  updateCartItemState,
+  updateCartReq,
 })
 class FullCard extends Component {
   static propTypes = {
@@ -22,24 +21,19 @@ class FullCard extends Component {
       cover: PropTypes.string,
       price: PropTypes.number,
       description: PropTypes.string,
-      // commentCount: PropTypes.number,
+      commentCount: PropTypes.number,
     }).isRequired,
+    updateCartReq: PropTypes.func.isRequired
   }
+  
   getCartCount() {
     const {data} = this.props
     return getCartById(data.id).count
   }
-  
-  state = {
-    count: this.getCartCount()
-  }
 
   handleChange = (count) => {
-    // request to update cart present count
-    const {data,updateCartItemState} = this.props
-    getCartById(data.id)
-    this.setState({ count })
-    updateCartItemState({
+    const {data,updateCartReq} = this.props
+    updateCartReq({
       id: data.id,
       count
     })
@@ -72,6 +66,7 @@ class FullCard extends Component {
     )
   }
 }
+
 const styledFullCard = styled(FullCard)`
   height: 90px;
   margin: 5px 0 2px 0;
@@ -94,4 +89,5 @@ const styledFullCard = styled(FullCard)`
     font-size: 0.7em;
   }
 `
+
 export default styledFullCard

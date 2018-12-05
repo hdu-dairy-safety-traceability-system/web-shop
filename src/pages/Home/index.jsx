@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {NavBar} from 'antd-mobile'
 
 import ShopHeader from './components/Header'
 import TenGrids from './components/TenGrids'

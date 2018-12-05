@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
-import ReactSVG from 'react-svg'
 
 import FilterTab, {svgWrapper} from './FilterTab'
 import filter from '@/assets/icons/filter.svg'

@@ -40,11 +40,13 @@ const TabBarWrapper = styled.div`
 @connect(store => ({cart: store.cart}), {addToCart})
 export default class CartBar extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    addToCart: PropTypes.object.isRequired,
   }
 
-  addToCart = (e) => {
-    const { addToCart, data, cart} = this.props
+  addToCart = () => {
+    const { addToCart, data} = this.props
+    data.selected = true
     addToCart(data)
   }
   render() {

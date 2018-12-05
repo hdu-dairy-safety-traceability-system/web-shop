@@ -1,20 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Flex,WhiteSpace,Stepper} from 'antd-mobile'
+import {Flex} from 'antd-mobile'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
 import Title from '@/components/base/Title'
-import InputNumber from '@/components/base/InputNumber'
 
-const mockData = {
-  cover: 'http://dummyimage.com/400x400',
-  description: '白解存亲算专专关民被省造山采。',
-  id: '500000198011092903',
-  price: 623,
-  title: '划装成南型',
-}
 class FullCard extends Component {
   static propTypes = {
     className: PropTypes.string.isRequired,

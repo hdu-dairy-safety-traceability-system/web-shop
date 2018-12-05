@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {Icon} from 'react-icons-kit'
-import {ic_done} from 'react-icons-kit/md/ic_done'
 import {checkmark} from 'react-icons-kit/icomoon/checkmark'
 class Radio extends PureComponent {
   static propTypes = {
@@ -24,6 +23,7 @@ class Radio extends PureComponent {
 
 const StyledRadio = styled(Radio)`
   // style code here
+    display: inline-block;
     padding: 2.5px;
     border: 1px solid #ccc;
     border-radius: 50%;
