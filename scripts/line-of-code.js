@@ -65,7 +65,7 @@ async function statisticsDir(baseDir) {
   )
 }
 
-async function pertyPrint() {
+async function prettyPrint() {
   await statisticsDir(getBasePath('src'))
   console.table(Array.from(CountSet))
   console.log('Total:')
@@ -74,4 +74,4 @@ async function pertyPrint() {
   )
 }
 
-pertyPrint()
+prettyPrint()
