@@ -1,17 +1,22 @@
 import request from './base'
 import curry from '@/utils/curry'
-
+import { getUserId } from '../redux/actions'
 // TODO Get user_id from store
-export const all = curry(request.get, '/users/123/cart')
-
-export function addToCart(present) {
-  return (curry(request.post,'/user/123/cart', present)(present))
+export function all() {
+  const userId = getUserId()
+  return (curry(request.get, `/user/${userId}/cart`))()
 }
 
-export function purchase(presents) {
-  return (curry(request.post,'/purchase',presents)(presents))
+export function addToCart(present) {
+  const userId = getUserId()
+  return (curry(request.post, `/user/${userId}/cart`, present)(present))
 }
 
 export function cartUpdateReq(changes) {
-  return (curry(request.post, '/user/123/cart', changes)(changes))
+  const userId = getUserId()
+  return (curry(request.put, `/user/${userId}/cart/${changes.id}`, changes)(changes))
+}
+
+export function purchase(presents) {
+  return (curry(request.post, '/purchase', presents)(presents))
 }

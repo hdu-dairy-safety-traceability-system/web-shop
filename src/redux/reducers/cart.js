@@ -10,7 +10,12 @@ const initialState = {
 }
 
 export function getSelectedPresents(store) {
-  return store.cart.cart.filter( present => !!present.selected)
+  return store.cart.cart
+    .filter( present => !!present.selected)
+    .map( present => {
+      const {id, count} = present
+      return {id, count}
+    })
 }
 
 function diff(cart, presents) {

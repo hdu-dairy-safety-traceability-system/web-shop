@@ -36,7 +36,7 @@ const tabs = [
     ],
   },{
     text: '销量',
-    name: 'sales',
+    name: 'saleCount',
     defaultIcon: sort,
     toggleIcons: [
       sortAsc,

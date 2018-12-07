@@ -4,7 +4,7 @@ import {
 } from '../constants/ActionTypes'
 const initialState = {
   loginState: 'unlogin', // one of unlogin/success/failed
-  userId: '',
+  userId: '1',
   logined: false
 }
 export default ( state = initialState, action) => {

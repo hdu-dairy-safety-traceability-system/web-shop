@@ -17,7 +17,7 @@ export default class Partition extends Component {
   }
   async componentDidMount(){
     const resp = await recommend()
-    this.setState({recommendList: resp.data.presents})
+    this.setState({recommendList: resp.data})
   }
   render() {
     const {label, classes} = this.props

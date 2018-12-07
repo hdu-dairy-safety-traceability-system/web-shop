@@ -14,7 +14,7 @@ export default class PresentView extends Component {
   static propTypes = {
     presentList: PropTypes.array.isRequired,
     refresh: PropTypes.func.isRequired,
-    category: PropTypes.string.isRequired
+    category: PropTypes.string
   }
   componentDidMount() {
     this.props.refresh()

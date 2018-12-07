@@ -18,17 +18,23 @@ export default class PresentInfo extends Component {
 
   static propTypes = {
     info: PropTypes.shape({
-      imgUrls: PropTypes.array,
+      images: PropTypes.array,
       title: PropTypes.string,
       price: PropTypes.number,
     })
+  }
+  
+  static defaultProps = {
+    info: {
+      images: []
+    }
   }
 
   render() {
     const {info} = this.props
     return (
       <div>
-        <Slider imgUrls={info.imgUrls} />
+        <Slider imgUrls={info.images} />
         <TextWrapper className="text">
           <h3>{info.title}</h3>
           <Price>{info.price}</Price>

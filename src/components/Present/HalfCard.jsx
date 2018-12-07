@@ -35,7 +35,8 @@ export default class PresentCard extends Component {
       <div className={classes.cardContianer}>
         <Link to={`/presents/${data.id}`}>
           <img className={classes.responsiveImg} src={data.cover} />
-          <p>{data.description}</p>
+          {/* TODO */}
+          <p>{data.title.substring(0, 12)}</p>
           <Price>{data.price}</Price>
         </Link>
       </div>

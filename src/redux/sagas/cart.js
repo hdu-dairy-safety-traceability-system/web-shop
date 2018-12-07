@@ -47,7 +47,7 @@ export function* watchAddToCart() {
 export function* cartGetAll() {
   try {
     const resp = yield getAll()
-    yield put(mergeCart(resp.data.presents))
+    yield put(mergeCart(resp.data))
   } catch (e) {
     // error handle
     console.log(e)

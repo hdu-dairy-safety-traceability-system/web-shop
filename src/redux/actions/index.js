@@ -18,6 +18,7 @@ import store from '../index.js'
 export function login(payload) {
   return {type: LOGIN_ACTION, payload}
 }
+
 export function loginSuccess(payload) {
   return {
     type: LOGIN_SUCCESS,
@@ -85,10 +86,6 @@ export function getCart() {
   }
 }
 
-export function getCartById(id) {
-  return store.getState().cart.cart.find(item => item.id == id)
-}
-
 export function makeOrder() {
   return {
     type: CART_MAKE_ORDER_REQ,
@@ -100,6 +97,11 @@ export function makeOrderSucc() {
     type: CART_MAKE_ORDER_SUCC
   }
 }
+
+export function getCartById(id) {
+  return store.getState().cart.cart.find(item => item.id == id)
+}
+
 export function getSelectedPresents() {
   return store.getState().cart.cart.filter(present => !!present.selected)
 }
@@ -111,4 +113,8 @@ export function totalPrice() {
       0
     )
   return sum
+}
+
+export function getUserId() {
+  return store.getState().login.userId
 }

@@ -24,7 +24,7 @@ export function* getPresent(action) {
     
     const resp = yield call(refresh, action.payload)
     const payload = {
-      list: resp.data.presents,
+      list: resp.data,
       type: action.payload.type
     }
     

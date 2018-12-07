@@ -8,6 +8,7 @@ const ininalState = {
   type: 'composite',
   order: 'desc'
 }
+/*eslint no-debugger: "off"*/
 export default function (state = ininalState, action) {
   switch(action.type) {
   case PRESENT_REINIT: 
@@ -17,13 +18,22 @@ export default function (state = ininalState, action) {
       // new array not refrence
       // type: action.payload.type
     }
-  case PRESENT_MERGE:
+  case PRESENT_MERGE: {
+    let notInList = action.payload.list
+    if(state.list.length !== 0) {
+      notInList = action.payload.list.filter(
+        item => state.list.find(
+          present => present.id != item.id
+        ) === -1
+      )
+    }
     return {
-      ...action.payload,
-      list: [ ...state.list, ...action.payload.list],
+      list: [...state.list, ...notInList],
       // type: action.payload.type
     }
-  default: 
+
+  }
+  default:
     return state
   }
 }

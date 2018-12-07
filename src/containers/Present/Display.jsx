@@ -14,7 +14,7 @@ export default class PresentDetail extends Component {
   }
     state = {
       info: {
-        imgUrls: []
+        images: []
       }
     }
     async componentDidMount(){

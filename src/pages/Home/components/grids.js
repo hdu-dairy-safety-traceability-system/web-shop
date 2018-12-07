@@ -12,7 +12,7 @@ import {ic_trending_down} from 'react-icons-kit/md/ic_trending_down'
 export default [{
   icon: ic_phonelink,
   name: '数码',
-  category: '数码',
+  category: 'digital',
 }, {
   icon: coffee,
   name: '茶叶',

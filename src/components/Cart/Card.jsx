@@ -25,9 +25,12 @@ class Card extends PureComponent {
 
   handleChange = () => {
     const {updateCartReq, data} = this.props
+    console.log(data)
     const payload = {
       selected: !this.state.isChecked,
-      id: data.id
+      id: data.id,
+      userId: data.user_id,
+      presetId: data.preset_id
     }
     this.setState({isChecked: payload.selected})
     updateCartReq(payload)

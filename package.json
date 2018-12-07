@@ -65,7 +65,8 @@
     "start": "node ./scripts/start.js",
     "build": "node ./scripts/build.js",
     "test": "node ./scripts/test.js --env=jsdom",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx src/ --fix -f table"
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx src/ --fix -f table",
+    "count": "node ./scripts/line-of-code.js"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
