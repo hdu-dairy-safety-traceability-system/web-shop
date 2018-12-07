@@ -11,7 +11,8 @@ export default class Header extends Component {
   }
   componentDidMount() {
     sliderReq.then(resp => {
-      const {urls} = resp.data.data
+      const data = resp.data
+      const urls = data.map( carouse => carouse.url)
       this.setState({urls})
     })
   }
