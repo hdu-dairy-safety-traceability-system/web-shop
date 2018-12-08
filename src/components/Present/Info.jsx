@@ -36,7 +36,7 @@ export default class PresentInfo extends Component {
       <div>
         <Slider imgUrls={info.images} />
         <TextWrapper className="text">
-          <h3>{info.title}</h3>
+          <h3>{info.description}</h3>
           <Price>{info.price}</Price>
         </TextWrapper>
         <GraySpace />

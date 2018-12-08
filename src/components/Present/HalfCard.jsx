@@ -4,7 +4,7 @@ import withStyles from 'react-jss'
 import {Link} from 'react-router-dom'
 import cardStyles from '@/jss/components/gifts'
 import Price from '@/components/base/Price'
-
+import Title from '@/components/base/Title'
 import defaultCover from '@/imgs/gift-default.png'
 @withStyles(cardStyles)
 export default class PresentCard extends Component {
@@ -36,7 +36,7 @@ export default class PresentCard extends Component {
         <Link to={`/presents/${data.id}`}>
           <img className={classes.responsiveImg} src={data.cover} />
           {/* TODO */}
-          <p>{data.title.substring(0, 12)}</p>
+          <Title>{data.title}</Title>
           <Price>{data.price}</Price>
         </Link>
       </div>

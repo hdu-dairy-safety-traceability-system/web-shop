@@ -48,7 +48,7 @@ class FullCard extends Component {
           <Image src={data.cover} />
         </div>
         <div>
-          <Title>{`${data.title}-${data.description}`}</Title>
+          <Title>{data.description}</Title>
           {/* TODO may display the tags */}
           <Flex justify="between">
             <Price>{data.price}</Price>
