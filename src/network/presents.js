@@ -9,3 +9,6 @@ export const recommend = curry(request.get, '/recommend')
 export function getPresentById(id) {
   return  request.get('/presents/' + id)
 }
+export function getImages(id) {
+  return request.get('/image/'+ id)
+}

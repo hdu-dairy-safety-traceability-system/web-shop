@@ -5,33 +5,38 @@ import CartBar from '@/components/Bottom/CartBar'
 import PresentInfo from '@/components/Present/Info'
 import ViewWithBar from '@/layouts/ViewWithBar'
 
-import {getPresentById} from '@/network/presents'
+import {getPresentById, getImages} from '@/network/presents'
 
 export default class PresentDetail extends Component {
   static propTypes = {
-    id: PropTypes.number.isRequired,
-    info: PropTypes.object.isRequired,
+    id: PropTypes.string.isRequired,
   }
     state = {
-      info: {
-        images: []
+      info: {},
+      images: {
+        detial: [],
+        carource: [],
       }
     }
     async componentDidMount(){
-      const resp = await getPresentById(this.props.id)
-      this.setState({info: resp.data})
+      const {id} = this.props
+      const respPre = await getPresentById(id)
+      const respImg = await getImages(id)
+      this.setState({ info: respPre.data, images: respImg.data})
     }
     render() {
-      const {info} = this.state
+      console.log(this.props.id)
+      const { info, images} = this.state
       // FIXME
       const {comments, ...present} = info
-      return (
-        <div>
+      if(info.id) {
+        return (
           <ViewWithBar
-            component={<PresentInfo info={info}/>}
+            component={<PresentInfo info={info} images={images}/>}
             bar={<CartBar data={present}/>}          
           />
-        </div>
-      )
+        )
+      }
+      return  null
     }
 }

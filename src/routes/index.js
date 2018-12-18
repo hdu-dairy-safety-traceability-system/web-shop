@@ -3,6 +3,7 @@ import Profile from '@/pages/Profile'
 import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import Presents from '@/pages/Presents'
+import Order from '@/pages/Order'
 import NoMatch from '@/pages/Error/NoMatch'
 export default [
   {
@@ -24,6 +25,9 @@ export default [
   }, {
     path: '/presents',
     component: Presents
+  }, {
+    path: '/order',
+    component: Order
   }, {
     component: NoMatch,
   }
