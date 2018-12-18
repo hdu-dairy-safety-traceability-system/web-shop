@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import PresentDisplay from '@/containers/Present/Display'
 export default class PresentDeatial extends PureComponent {

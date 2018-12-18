@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
+import TopBar from '@/components/TopBar'
 
 import CartBar from '@/components/Bottom/CartBar'
 import PresentInfo from '@/components/Present/Info'
@@ -25,16 +26,18 @@ export default class PresentDetail extends Component {
       this.setState({ info: respPre.data, images: respImg.data})
     }
     render() {
-      console.log(this.props.id)
       const { info, images} = this.state
       // FIXME
       const {comments, ...present} = info
       if(info.id) {
         return (
-          <ViewWithBar
-            component={<PresentInfo info={info} images={images}/>}
-            bar={<CartBar data={present}/>}          
-          />
+          <Fragment>
+            <TopBar>{info.title}</TopBar>
+            <ViewWithBar
+              component={<PresentInfo info={info} images={images}/>}
+              bar={<CartBar data={present}/>}          
+            />
+          </Fragment>
         )
       }
       return  null

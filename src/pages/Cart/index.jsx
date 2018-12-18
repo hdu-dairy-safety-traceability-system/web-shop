@@ -8,6 +8,7 @@ import CartList from '@/components/Cart/List'
 import ViewWithBar from '@/layouts/ViewWithBar'
 import { getCart } from '@/redux/actions'
 import Payment from '@/components/Bottom/Payment'
+import TopBar from '@/components/TopBar'
 @connect(store => ({list: store.cart.cart}), {getCart})
 class Cart extends PureComponent {
   static propTypes = {
@@ -28,14 +29,7 @@ class Cart extends PureComponent {
     // const {list} = this.state
     return (
       <div className={className}>
-        <NavBar
-          icon={<Icon type="left"/>}
-          mode="light"
-          //https://reacttraining.com/react-router/web/api/history
-          onLeftClick={() => window.history.back()}
-        >
-          购物车
-        </NavBar>
+        <TopBar>购物车</TopBar>
         <ViewWithBar 
           component={<CartList dataSet={list} />}
           bar={<Payment />}
