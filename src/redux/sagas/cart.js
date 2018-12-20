@@ -64,7 +64,7 @@ export function* makeOrder() {
     const presents = yield select(getSelectedPresents)
     const resp = yield purchase(presents)
     // console.log(resp)
-    yield put(makeOrderSucc())
+    yield put(makeOrderSucc(resp.data))
   } catch(e) {
     console.log(e)
   }

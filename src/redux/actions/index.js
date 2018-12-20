@@ -92,9 +92,10 @@ export function makeOrder() {
   }
 }
 
-export function makeOrderSucc() {
+export function makeOrderSucc(payload) {
   return {
-    type: CART_MAKE_ORDER_SUCC
+    type: CART_MAKE_ORDER_SUCC,
+    payload
   }
 }
 

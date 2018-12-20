@@ -2,6 +2,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILED
 } from '../constants/ActionTypes'
+
 const initialState = {
   loginState: 'unlogin', // one of unlogin/success/failed
   userId: '1',

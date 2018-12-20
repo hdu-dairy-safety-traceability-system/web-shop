@@ -3,16 +3,18 @@ import PropTypes from 'prop-types'
 import {Button} from 'antd-mobile'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import Radio from '@/components/base/Radio'
 import Price from '@/components/base/Price'
-import {totalPrice, makeOrder} from '@/redux/actions'
+import { makeOrder } from '@/redux/actions'
 
-@connect(null, {makeOrder})
+@connect((store) => ({ order: store.cart.order, totalPrice: store.cart.totalPrice}), {makeOrder})
 class Payment extends PureComponent {
   static propTypes = {
     className: PropTypes.string.isRequired,
     makeOrder: PropTypes.func.isRequired,
+    order: PropTypes.object.isRequired,
   }
 
   static defaultProps = {}
@@ -25,13 +27,15 @@ class Payment extends PureComponent {
     this.props.makeOrder()
   }
   render() {
-    const {className} = this.props
-    const sum = totalPrice()
+    const { className, order, totalPrice} = this.props
+    if(order.isSucc) {
+      return (<Redirect to="/order"/>)
+    }
     return (
       <div className={className}>
         <div>
           <Radio selected onClick={this.handleClick} />
-          <Price>{sum}</Price>
+          <Price>{totalPrice}</Price>
         </div>
         <Button onClick={this.purchase} type="warning">下单</Button>
       </div>

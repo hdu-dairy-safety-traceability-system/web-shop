@@ -7,8 +7,20 @@ const initialState = {
   cart: [
     // present objects
   ],
+  order: {
+    isSucc: false,
+    data: []
+  },
+  totalPrice: 0,
 }
 
+function totalPrice(presents) {
+  return presents.filter(present => !!present.selected)
+    .reduce(
+      (totalPrice, present) => totalPrice += present.price * present.count,
+      0
+    )
+}
 export function getSelectedPresents(store) {
   return store.cart.cart
     .filter( present => !!present.selected)
@@ -48,7 +60,9 @@ export default ( state = initialState, action) => {
   case CART_MERGE_PRESENT: {
     const cart  = changePresent(state.cart, action.payload)
     return {
+      ...state,
       cart: [...cart],
+      totalPirce: totalPrice(cart),
     }
   }
   case CART_PRESENT_CHANGE: {
@@ -61,12 +75,24 @@ export default ( state = initialState, action) => {
       cart.splice(presentIndex, 1, newCopy) 
     }
     return {
+      ...state,
       cart: [...cart],
+      totalPrice: totalPrice(cart),
     }
   }
   case CART_MAKE_ORDER_SUCC:
-    return state
-  default: 
-    return state
-  }
+    return {
+      ...state,
+      order: {
+        isSucc: true, 
+        data: action.payload
+      },
+      totalPrice: totalPrice(state.cart),
+    }
+  default: {
+    return {
+      ...state,
+      totalPrice: totalPrice(state.cart),
+    }
+  }}
 }

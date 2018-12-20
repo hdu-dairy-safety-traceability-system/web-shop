@@ -1,9 +1,9 @@
 export const CART_ADD_PRESENT_REQ = 'CART_ADD_PRESENT_REQ' // request
-export const CART_GET_ALL_REQ = 'CART_GET_ALL'
+export const CART_GET_ALL_REQ = 'CART_GET_ALL_REQ'
 export const CART_MAKE_ORDER_REQ = 'CART_MAKE_ORDER_REQ'
 export const CART_MAKE_ORDER_SUCC = 'CART_MAKE_ORDER_SUCC'
 export const CART_MERGE_PRESENT = 'CART_MERGE_PRESENT'
-export const CART_PRESENTS_CREATE = 'CART_PRESENTS_UPDATE' // request
+export const CART_PRESENTS_CREATE = 'CART_PRESENTS_CREATE' // request
 export const CART_PRESENTS_DELETE = 'CART_PRESENTS_DELETE' // request
 export const CART_PRESENT_CHANGE = 'CART_PRESENT_CHANGE'
 export const CART_PRESENT_CHANGE_REQ = 'CART_PRESENT_CHANGE_REQ' // may be create action or delete actions
