@@ -27,18 +27,15 @@ export default class Pro_Grid_Five extends Component {
       <Grid 
         data={gridSet}
         columnNum={5}
-        // hasLine
         hasLine={false}
-        renderItem={item => {
-          return (
-            //<Link to={`/presents?category=${item.category}`}>
-            <div style={{ padding: '10px' }}>
-              <div style={{marginLeft:'2px'}}><ReactSVG src={item.icon} svgStyle={{height:40,width:40}}/></div>
-              <span style={{fontSize:'12px'}}>{item.name}</span>
+        renderItem={item =>  (
+          <Link to={item.path}>
+            <div  style={{paddingTop: 10}} >
+              <ReactSVG src={item.icon} svgStyle={{height:30,width:30}}/>
+              <span>{item.name}</span>
             </div>
-            //</Link>
-          )
-        }}
+          </Link>
+        )}
       />
     )
   }

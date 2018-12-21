@@ -32,12 +32,10 @@ export default class Pro_Grid_Four extends Component {
         itemStyle={{height:'80px'}}
         renderItem={item => {
           return (
-            //<Link to={`/presents?category=${item.category}`}>
-            <div style={{ padding: '10px' }}>
-              <div style={{marginLeft:'2px'}}><span style={{fontSize:'30px',color:'#ff0000'}}>{item.num}</span></div>
-              <span style={{fontSize:'12px',marginTop:'100px'}}>{item.name}</span>
+            <div style={{paddingTop: 10}}>
+              <div><span style={{fontSize:'30px',color:'#ff0000'}}>{item.num}</span></div>
+              <span style={{fontSize:'12px'}}>{item.name}</span>
             </div>
-          // </Link><ReactSVG src={item.icon} svgStyle={{height:40,width:40}}/>
           )
         }}
       />

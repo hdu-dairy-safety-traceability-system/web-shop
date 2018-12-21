@@ -16,8 +16,11 @@ class Detail extends PureComponent {
     // console.log(details)
     return (
       <div className={className}>
+        <h2>详情</h2>
         {
-          details.map( (image,idx) => (<Image key={idx} src={image} />))
+          details.length
+            ? details.map( (image,idx) => (<Image key={idx} src={image} />))
+            : <p>详情缺失</p>
         }
       </div>
     )
@@ -26,6 +29,13 @@ class Detail extends PureComponent {
 
 const StyledDetail = styled(Detail)`
   // style code here
+  & h2 {
+    text-align: center;
+  }
+  & > p {
+    text-align: center;
+    margin: 1em;
+  }
 `
 
 export default StyledDetail

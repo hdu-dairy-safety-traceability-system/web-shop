@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Toast } from 'antd-mobile'
 import {Icon} from 'react-icons-kit'
 import ReactSVG from 'react-svg'
 import styled from 'styled-components'
-import TabItem from './TabItem'
 import { ic_shopping_cart } from 'react-icons-kit/md/ic_shopping_cart'
+
+import TabItem from './TabItem'
 import kefu from '@/assets/icons/kefu3.svg'
 import {connect} from 'react-redux'
 import {addToCart} from '@/redux/actions'
@@ -48,6 +50,7 @@ export default class CartBar extends Component {
     const { addToCart, data} = this.props
     data.selected = true
     addToCart(data)
+    Toast.info('成功加入购物车',1)
   }
   render() {
     return (

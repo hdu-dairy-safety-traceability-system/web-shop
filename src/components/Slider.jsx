@@ -5,7 +5,14 @@ export default class Slider extends Component {
   static propTypes = {
     imgUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
   }
-
+  
+  state = {
+    idle: ''
+  }
+  handleLoad = () => {
+    // force to re-render
+    this.setState({idle: 'idle'})
+  }
   render() {
     let {imgUrls} = this.props
     if(imgUrls === undefined || imgUrls.length === 0) {
@@ -16,7 +23,7 @@ export default class Slider extends Component {
         autoPlay
         infinite
       >
-        {imgUrls.map((url,idx) =><img key={idx} src={url}/>)}
+        {imgUrls.map((url,idx) =><img onLoad={this.handleLoad} key={idx} src={url}/>)}
       </Carousel>
     )
   }

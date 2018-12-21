@@ -5,19 +5,15 @@ import message from '@/assets/icons/message.svg'
 import Order from '@/assets/icons/Order.svg'
 
 export default [{
-  num: '1',
+  num: '0',
   name: '商品关注',
-  //category: '待付款',
 }, {
   num: '0',
   name: '店铺关注',
-  //category: '待收货',
 },{
-  num: '3',
+  num: '0',
   name: '喜欢的内容',
-  //category: '待评价艺',
 },{
-  num: '8',
+  num: '0',
   name: '浏览记录',
-  //category: '退货售后',
 }]

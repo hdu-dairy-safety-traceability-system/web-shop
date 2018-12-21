@@ -28,7 +28,7 @@ const Item = styled.div`
     margin: 6px 0;
   }
 `
-export default class CommentList extends Component {
+class CommentList extends Component {
   static propTypes = {
     dataSet: PropTypes.arrayOf(
       PropTypes.shape({
@@ -60,13 +60,29 @@ export default class CommentList extends Component {
     )
   }
   render() {
-    const {dataSet} = this.props
+    const {dataSet, className} = this.props
     return (
-      <div>
+      <div className={className}>
+        <h2>详情</h2>
         {
-          dataSet.map((data,idx) => this.renderItem(idx, data))
+          dataSet.length
+            ? dataSet.map((data,idx) => this.renderItem(idx, data))
+            : <p>还没有评论，赶紧来抢沙发吧！</p>
         }
       </div>
     )
   }
 }
+
+const StyledCommentList = styled(CommentList)`
+  & h2 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  & > p {
+    text-align: center;
+    margin: 1em;
+  }
+`
+
+export default StyledCommentList
