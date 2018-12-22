@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom'
 import ReactSVG  from 'react-svg'
 import gridsData from './grids_five'
 
-console.log(gridsData)
-
 export default class Pro_Grid_Five extends Component {
   static defaultProps={
     gridSet: gridsData

@@ -2,6 +2,7 @@ import {
   CART_MERGE_PRESENT,
   CART_PRESENT_CHANGE,
   CART_MAKE_ORDER_SUCC,
+  CART_RESET_STATE,
 } from '../constants/ActionTypes'
 const initialState = {
   cart: [
@@ -25,8 +26,14 @@ export function getSelectedPresents(store) {
   return store.cart.cart
     .filter( present => !!present.selected)
     .map( present => {
-      const {id, count} = present
-      return {id, count}
+      const {
+        present_id,
+        count
+      } = present
+      return {
+        id: present_id,
+        count
+      }
     })
 }
 
@@ -88,6 +95,14 @@ export default ( state = initialState, action) => {
         data: action.payload
       },
       totalPrice: totalPrice(state.cart),
+    }
+  case CART_RESET_STATE:
+    return {
+      ...state,
+      order: {
+        isSucc: false,
+        data: { },
+      },
     }
   default: {
     return {

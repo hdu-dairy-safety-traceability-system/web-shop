@@ -21,7 +21,6 @@ class ViewWithBar extends PureComponent {
 }
 
 const StyledViewWithBar = styled(ViewWithBar)`
-  background-color: #f0f0f0;
   & > :nth-child(1) {
     margin-bottom: 50px;
   }

@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 import ReactSVG  from 'react-svg'
 import gridsData from './grids_four'
 
-console.log(gridsData)
 import {Icon} from 'react-icons-kit'
 //import { width } from 'window-size';
 export default class Pro_Grid_Four extends Component {

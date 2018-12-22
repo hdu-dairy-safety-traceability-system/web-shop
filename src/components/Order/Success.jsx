@@ -1,21 +1,37 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Flex } from 'antd-mobile'
 import ReactSVG from 'react-svg'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import Price from '@/components/base/Price'
 import billIcon from '@/assets/icons/bill.svg'
+import { resetCartState } from '@/redux/actions'
 
-class OrderSuccess extends PureComponent {
+@connect((store) => ({ bill: store.cart.order.data }), { resetCartState })
+class OrderSuccess extends Component {
   static propTypes = {
     className: PropTypes.string.isRequired,
-    prop: PropTypes
   }
 
-  static defaultProps = {}
-
+  static defaultProps = {
+    bill: {
+      method: '账户扣款',
+      sumMoney: 0,
+      discounts: 0
+    }
+  }
+  shouldComponentUpdate(nextProps) {
+    if(Object.keys(nextProps.bill).length) {
+      return true
+    }
+    return false   
+  }
+  componentDidMount() {
+    this.props.resetCartState()
+  }
   render() {
     const {className, bill} = this.props
     return (

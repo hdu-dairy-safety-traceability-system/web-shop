@@ -2,13 +2,16 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import StarRatingComponent from 'react-star-rating-component'
 import styled from 'styled-components'
-import { Flex, List, Button, Modal, TextareaItem } from 'antd-mobile'
-
+import {
+  Flex, List, Button, Modal, TextareaItem, Toast
+} from 'antd-mobile'
+import { crateComment } from '@/network/comment' 
 class OrderMadal extends PureComponent {
   static propTypes = {
     visible: PropTypes.bool.isRequired,
     onToggle: PropTypes.func.isRequired,
     className: PropTypes.string.isRequired,
+    presentId: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -16,12 +19,21 @@ class OrderMadal extends PureComponent {
   }
 
   state = {
-    comment: '',
+    comment: '礼物非常满意，好评！',
     rating: 1,
   }
 
-  handleSubmit = () => {
-    console.log('submit')
+  handleSubmit = async () => {
+    const {rating, comment} = this.state
+    const { presentId, onToggle } = this.props
+    const commentData = {
+      star: rating,
+      content: comment,
+      pId: presentId,
+    }
+    await crateComment(commentData)
+    onToggle()
+    Toast.info('评论成功！', 1)
   }
 
   onStarClick = (nextValue, prevValue, name) => {
@@ -30,7 +42,7 @@ class OrderMadal extends PureComponent {
 
   render() {
     const {visible, onToggle ,className} = this.props
-    const {rating } = this.state
+    const { rating, comment} = this.state
     return (
       <Modal
         visible={visible}
@@ -50,7 +62,7 @@ class OrderMadal extends PureComponent {
 
         <List  style={{backgroundColor: '#f5f5f5'}} renderHeader={() => '评论内容'}>
           <TextareaItem
-            defaultValue="礼物非常满意，好评！"
+            value={comment}
             rows={5}
             count={100}
             onChange={(text) => this.setState({commet: text})}

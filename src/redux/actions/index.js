@@ -12,6 +12,7 @@ import {
   PRESENT_MERGE,
   PRESENT_REFRESH,
   PRESENT_REINIT,
+  CART_RESET_STATE,
 } from '../constants/ActionTypes'
 import store from '../index.js'
 
@@ -99,6 +100,13 @@ export function makeOrderSucc(payload) {
   }
 }
 
+export function resetCartState() {
+  return {
+    type: CART_RESET_STATE,
+  }
+}
+
+// access to store
 export function getCartById(id) {
   return store.getState().cart.cart.find(item => item.id == id)
 }

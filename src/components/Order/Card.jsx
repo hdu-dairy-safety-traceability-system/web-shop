@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Flex, List, Button, Modal,TextareaItem} from 'antd-mobile'
+import {Flex, Button } from 'antd-mobile'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
@@ -30,18 +31,21 @@ class OrderCard extends Component {
     const { visible } = this.state
     return (
       <Flex row="true" className={className}>
-        <div>
+        <Link to={`/presents/${data.pId}`}>
           <Image  src={data.cover}/>
-        </div>
+        </Link>
         <div>
           <Title>{data.description}</Title>
           <Flex style={{marginTop: 15}} justify="between">
-            <Price>{data.price}</Price>
+            <div>
+              <Price>{data.price}</Price>
+              &nbsp;x&nbsp;{data.count}
+            </div>
             {/* TODO Modal comment */}
             <Button onClick={this.toggleModal} size="small">评论</Button>
           </Flex>
         </div>
-        <OrderModel onToggle={this.toggleModal} visible={visible}/>
+        <OrderModel presentId={data.pId} onToggle={this.toggleModal} visible={visible}/>
       </Flex>
     )
   }

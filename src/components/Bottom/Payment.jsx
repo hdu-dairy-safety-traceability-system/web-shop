@@ -29,7 +29,7 @@ class Payment extends PureComponent {
   render() {
     const { className, order, totalPrice} = this.props
     if(order.isSucc) {
-      return (<Redirect to="/order"/>)
+      return (<Redirect to="/order/payed"/>)
     }
     return (
       <div className={className}>

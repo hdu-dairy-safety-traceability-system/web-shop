@@ -9,6 +9,7 @@ export const CART_PRESENT_CHANGE = 'CART_PRESENT_CHANGE'
 export const CART_PRESENT_CHANGE_REQ = 'CART_PRESENT_CHANGE_REQ' // may be create action or delete actions
 export const CART_MERGE_PRESENTS = 'CART_MERGE_PRESENTS'
 export const CART_REMOVE_PRESENTS = 'CART_REMOVE_PRESENTS'
+export const CART_RESET_STATE = 'CART_RESET_STATE'
 export const LOGIN_ACTION = 'LOGIN_ACTION' // request
 export const LOGIN_FAILED = 'LOGIN_FAILED'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
