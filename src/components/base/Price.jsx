@@ -7,6 +7,7 @@ const PriceWrapper = styled.p`
   color: #f8513b;
   font-size: 1.3em;
   font-weight: 700;
+  margin: 0;
   &:before {
     content: "¥";
     margin-right: 3px;

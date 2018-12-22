@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Flex, Button} from 'antd-mobile'
+import {Flex, List, Button, Modal,TextareaItem} from 'antd-mobile'
 import styled from 'styled-components'
 
-import shopIcon from '@/assets/icons/shop.svg'
 import Image from '@/components/base/Image'
 import Price from '@/components/base/Price'
 import Title from '@/components/base/Title'
-
+import OrderModel from './Modal'
 
 class OrderCard extends Component {
   static propTypes = {
@@ -18,9 +17,17 @@ class OrderCard extends Component {
       description: PropTypes.string,
     }).isRequired,
   }
+  state = {
+    visible: false,
+  }
+
+  toggleModal = () => {
+    this.setState({ visible: !this.state.visible })
+  }
 
   render() {
     const {data, className} = this.props
+    const { visible } = this.state
     return (
       <Flex row="true" className={className}>
         <div>
@@ -30,9 +37,11 @@ class OrderCard extends Component {
           <Title>{data.description}</Title>
           <Flex style={{marginTop: 15}} justify="between">
             <Price>{data.price}</Price>
-            <Button size="small">评论</Button>
+            {/* TODO Modal comment */}
+            <Button onClick={this.toggleModal} size="small">评论</Button>
           </Flex>
         </div>
+        <OrderModel onToggle={this.toggleModal} visible={visible}/>
       </Flex>
     )
   }

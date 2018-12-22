@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {gray} from '@/jss/base/colors'
-import OrderView from '@/containers/Order/View'
-export default class OrderIndex extends Component {
+import {Route} from 'react-router-dom'
+import urljoin from 'url-join'
+
+import presentRoute from '@/routes/order'
+export default class Presents extends Component {
   static propTypes = {
+    match: PropTypes.object.isRequired,
   }
 
   render() {
+    const {match} = this.props
     return (
       <div>
-        <OrderView />
+        {
+          presentRoute.map( ({path, ...restProps},idx) => (
+            <Route key={idx} path={urljoin(match.path, path)} {...restProps}/>
+          ))
+        }
       </div>
     )
   }
