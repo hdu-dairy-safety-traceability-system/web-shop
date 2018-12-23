@@ -4,7 +4,7 @@ import withStyles from 'react-jss'
 
 import List from './List'
 import splitLine from '@/jss/components/Gifts/Partition'
-import {recommend} from '@/network/presents'
+import {recommend2} from '@/network/presents'
 
 @withStyles({ splitLine})
 export default class Partition extends Component {
@@ -16,7 +16,7 @@ export default class Partition extends Component {
     recommendList: []
   }
   async componentDidMount(){
-    const resp = await recommend()
+    const resp = await recommend2()
     this.setState({recommendList: resp.data})
   }
   render() {

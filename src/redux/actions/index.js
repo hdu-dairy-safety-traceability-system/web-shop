@@ -8,6 +8,7 @@ import {
   CART_MERGE_PRESENT,
   LOGIN_ACTION,
   LOGIN_FAILED,
+  PRESENT_FILITER,
   LOGIN_SUCCESS,
   PRESENT_MERGE,
   PRESENT_REFRESH,
@@ -103,6 +104,13 @@ export function makeOrderSucc(payload) {
 export function resetCartState() {
   return {
     type: CART_RESET_STATE,
+  }
+}
+
+export function presentFilter(payload) {
+  return {
+    type: PRESENT_FILITER,
+    payload,
   }
 }
 

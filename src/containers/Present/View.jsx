@@ -16,20 +16,35 @@ export default class PresentView extends Component {
     refresh: PropTypes.func.isRequired,
     category: PropTypes.string
   }
+  state = {
+    offset: 1,
+    type: 'composite',
+    order: 'desc',
+  }
   componentDidMount() {
-    this.props.refresh()
+    this.props.refresh({
+      offset: 0,
+      type: 'composite',
+      order: 'desc',
+    })
+  }
+  handleRefresh = () => {
+    const {offset, type, order} = this.state
+    this.setState({offset: offset + 1})
+    this.props.refresh({ offset, type, order })
+  }
+  handleClick = (name, order) => {
+    this.setState({
+      type: name, order
+    })
+    this.props.refresh({ type: name, order })
   }
   render() {
     const {refresh,presentList,category} = this.props
     return (
       <div>
-        <PresentFilterTabs onClick={(name, order) => refresh({type: name, order})}/>
-        {/* <Drawer
-          sidebar={<div style={{width: 300,height: '100%',backgroundColor: '#000'}}></div>}
-          position="right"
-          open
-        > */}
-        <PullToRefresh direction="up" onRefresh={()=> refresh() }>
+        <PresentFilterTabs onClick={this.handleClick}/>
+        <PullToRefresh direction="up" onRefresh={this.handleRefresh}>
           <PresentList full dataSet={presentList}/>
         </PullToRefresh>
         {/* </Drawer> */}

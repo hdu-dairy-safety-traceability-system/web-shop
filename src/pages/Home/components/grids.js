@@ -15,8 +15,8 @@ export default [{
   category: 'digital',
 }, {
   icon: coffee,
-  name: '茶叶',
-  category: '茶叶',
+  name: '玩具',
+  category: 'toy',
 },{
   icon: ic_texture,
   name: '布艺',

@@ -21,14 +21,16 @@ export function* getPresent(action) {
     if(category !== undefined) {
       action.payload.category = category
     }
-    
+    /*eslint no-debugger: "off"*/
     const resp = yield call(refresh, action.payload)
+    console.log(resp.data)
     const payload = {
       list: resp.data,
-      type: action.payload.type
+      type: action.payload.type,
+      order: action.payload.order,
     }
-    
-    if (present.type === action.payload.type
+    // debugger
+    if ( present.type === action.payload.type
       && present.order === action.payload.order) {
       // append
       yield put(actions.mergePresents(payload))

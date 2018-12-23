@@ -33,7 +33,7 @@ class ProfileHeader extends PureComponent {
       
         <div className="header">
           <Flex align="center" justify="start" >
-            <Avatar src="https://avatars2.githubusercontent.com/u/22773923?s=40&v=4"/>
+            <Avatar src="http://dummyimage.com/750x750/50B347/FFF&text=Avatar"/>
             <Flex direction="column" align="start" justify="start">
               <span className="nickname">
                 {name}

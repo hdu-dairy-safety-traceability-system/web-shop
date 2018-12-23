@@ -34,7 +34,7 @@ export default class PresentInfo extends Component {
     const {info,images} = this.props
     return (
       <div>
-        <Slider imgUrls={images.carource} />
+        <Slider imgUrls={images.carouse} />
         <TextWrapper className="text">
           <h3>{info.description}</h3>
           <Price>{info.price}</Price>

@@ -52,7 +52,7 @@ export default class SearchBar extends Component {
     if (searchTerm !== '') {
       IndexSearch({ q: searchTerm })
         .then(res => {
-          this.setState({ searchRes: res.data.products })
+          this.setState({ searchRes: res.data })
         })
         .catch(err => {
           console.log(err)
